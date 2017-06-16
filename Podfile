@@ -1,9 +1,13 @@
 platform :ios, '8.0'
-workspace 'LPIM.xcworkspace'
+use_frameworks!
 
-pod 'NIMSDK', '~> 3.8.0'
+workspace 'LPIM.xcworkspace'
 
 target 'LPIM' do
   project 'LPIM/LPIM.xcodeproj'
+  
   pod 'NIMSDK', '~> 3.8.0'
+  pod 'XCGLogger', '~> 5.0.1'
+  pod 'SwiftyJSON', '~> 3.1.4'
+  
 end

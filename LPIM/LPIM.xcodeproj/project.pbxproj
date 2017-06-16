@@ -7,24 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D2888C98D7BA93B83B5C55C /* libPods-LPIM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C1B28BCA83EA70658C40C0 /* libPods-LPIM.a */; };
-		E8736F961EF419E900FE05D5 /* LPIMAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736F951EF419E900FE05D5 /* LPIMAppDelegate.swift */; };
-		E8736F981EF419E900FE05D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736F971EF419E900FE05D5 /* ViewController.swift */; };
-		E8736F9B1EF419E900FE05D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8736F991EF419E900FE05D5 /* Main.storyboard */; };
+		98F629835F46F8063401FB94 /* Pods_LPIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496BC4BB5FCC451A8F4F130 /* Pods_LPIM.framework */; };
 		E8736F9D1EF419E900FE05D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8736F9C1EF419E900FE05D5 /* Assets.xcassets */; };
 		E8736FA01EF419E900FE05D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8736F9E1EF419E900FE05D5 /* LaunchScreen.storyboard */; };
+		E8736FB31EF4213C00FE05D5 /* LPIMAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FB21EF4213C00FE05D5 /* LPIMAppDelegate.swift */; };
+		E8736FB51EF424AF00FE05D5 /* LPIMAppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FB41EF424AF00FE05D5 /* LPIMAppDelegate+Push.swift */; };
+		E8736FB71EF4259E00FE05D5 /* YLKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FB61EF4259E00FE05D5 /* YLKit.swift */; };
+		E8736FB91EF425A800FE05D5 /* YLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FB81EF425A800FE05D5 /* YLUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0496BC4BB5FCC451A8F4F130 /* Pods_LPIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C929AEECFE2CD54A0A700EC /* Pods-LPIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPIM.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LPIM/Pods-LPIM.debug.xcconfig"; sourceTree = "<group>"; };
-		D6C1B28BCA83EA70658C40C0 /* libPods-LPIM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LPIM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8736F921EF419E900FE05D5 /* LPIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8736F951EF419E900FE05D5 /* LPIMAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPIMAppDelegate.swift; sourceTree = "<group>"; };
-		E8736F971EF419E900FE05D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E8736F9A1EF419E900FE05D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8736F9C1EF419E900FE05D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8736F9F1EF419E900FE05D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8736FA11EF419E900FE05D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8736FAF1EF4212200FE05D5 /* LPIM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LPIM-Bridging-Header.h"; sourceTree = "<group>"; };
+		E8736FB21EF4213C00FE05D5 /* LPIMAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPIMAppDelegate.swift; sourceTree = "<group>"; };
+		E8736FB41EF424AF00FE05D5 /* LPIMAppDelegate+Push.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LPIMAppDelegate+Push.swift"; sourceTree = "<group>"; };
+		E8736FB61EF4259E00FE05D5 /* YLKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLKit.swift; sourceTree = "<group>"; };
+		E8736FB81EF425A800FE05D5 /* YLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLUtils.swift; sourceTree = "<group>"; };
 		FD41DC50491E685DD8BEF3F9 /* Pods-LPIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPIM.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LPIM/Pods-LPIM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D2888C98D7BA93B83B5C55C /* libPods-LPIM.a in Frameworks */,
+				98F629835F46F8063401FB94 /* Pods_LPIM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +46,7 @@
 		A4976114EFCE0D4A1F62A8E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D6C1B28BCA83EA70658C40C0 /* libPods-LPIM.a */,
+				0496BC4BB5FCC451A8F4F130 /* Pods_LPIM.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -60,6 +63,10 @@
 		E8736F891EF419E900FE05D5 = {
 			isa = PBXGroup;
 			children = (
+				E8736FAE1EF420C900FE05D5 /* Vendors */,
+				E8736FAC1EF4208E00FE05D5 /* Utils */,
+				E8736FAB1EF4208E00FE05D5 /* Common */,
+				E8736FAA1EF4208E00FE05D5 /* Classes */,
 				E8736F941EF419E900FE05D5 /* LPIM */,
 				E8736F931EF419E900FE05D5 /* Products */,
 				E50F03DCCA433CC7B0B90E41 /* Pods */,
@@ -78,14 +85,44 @@
 		E8736F941EF419E900FE05D5 /* LPIM */ = {
 			isa = PBXGroup;
 			children = (
-				E8736F951EF419E900FE05D5 /* LPIMAppDelegate.swift */,
-				E8736F971EF419E900FE05D5 /* ViewController.swift */,
-				E8736F991EF419E900FE05D5 /* Main.storyboard */,
 				E8736F9C1EF419E900FE05D5 /* Assets.xcassets */,
 				E8736F9E1EF419E900FE05D5 /* LaunchScreen.storyboard */,
 				E8736FA11EF419E900FE05D5 /* Info.plist */,
 			);
 			path = LPIM;
+			sourceTree = "<group>";
+		};
+		E8736FAA1EF4208E00FE05D5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E8736FAF1EF4212200FE05D5 /* LPIM-Bridging-Header.h */,
+				E8736FB21EF4213C00FE05D5 /* LPIMAppDelegate.swift */,
+				E8736FB41EF424AF00FE05D5 /* LPIMAppDelegate+Push.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E8736FAB1EF4208E00FE05D5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E8736FAC1EF4208E00FE05D5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E8736FB61EF4259E00FE05D5 /* YLKit.swift */,
+				E8736FB81EF425A800FE05D5 /* YLUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E8736FAE1EF420C900FE05D5 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +160,7 @@
 				TargetAttributes = {
 					E8736F911EF419E900FE05D5 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,7 +190,6 @@
 			files = (
 				E8736FA01EF419E900FE05D5 /* LaunchScreen.storyboard in Resources */,
 				E8736F9D1EF419E900FE05D5 /* Assets.xcassets in Resources */,
-				E8736F9B1EF419E900FE05D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,22 +248,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8736F981EF419E900FE05D5 /* ViewController.swift in Sources */,
-				E8736F961EF419E900FE05D5 /* LPIMAppDelegate.swift in Sources */,
+				E8736FB51EF424AF00FE05D5 /* LPIMAppDelegate+Push.swift in Sources */,
+				E8736FB71EF4259E00FE05D5 /* YLKit.swift in Sources */,
+				E8736FB91EF425A800FE05D5 /* YLUtils.swift in Sources */,
+				E8736FB31EF4213C00FE05D5 /* LPIMAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E8736F991EF419E900FE05D5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E8736F9A1EF419E900FE05D5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E8736F9E1EF419E900FE05D5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -336,10 +367,14 @@
 			baseConfigurationReference = 6C929AEECFE2CD54A0A700EC /* Pods-LPIM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LPIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lp.LPIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/LPIM-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -349,10 +384,13 @@
 			baseConfigurationReference = FD41DC50491E685DD8BEF3F9 /* Pods-LPIM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LPIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lp.LPIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/LPIM-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
