@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D2888C98D7BA93B83B5C55C /* libPods-LPIM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C1B28BCA83EA70658C40C0 /* libPods-LPIM.a */; };
+		E8736F961EF419E900FE05D5 /* LPIMAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736F951EF419E900FE05D5 /* LPIMAppDelegate.swift */; };
+		E8736F981EF419E900FE05D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736F971EF419E900FE05D5 /* ViewController.swift */; };
+		E8736F9B1EF419E900FE05D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8736F991EF419E900FE05D5 /* Main.storyboard */; };
+		E8736F9D1EF419E900FE05D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8736F9C1EF419E900FE05D5 /* Assets.xcassets */; };
+		E8736FA01EF419E900FE05D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8736F9E1EF419E900FE05D5 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6C929AEECFE2CD54A0A700EC /* Pods-LPIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPIM.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LPIM/Pods-LPIM.debug.xcconfig"; sourceTree = "<group>"; };
+		D6C1B28BCA83EA70658C40C0 /* libPods-LPIM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LPIM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8736F921EF419E900FE05D5 /* LPIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8736F951EF419E900FE05D5 /* LPIMAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPIMAppDelegate.swift; sourceTree = "<group>"; };
+		E8736F971EF419E900FE05D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8736F9A1EF419E900FE05D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8736F9C1EF419E900FE05D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8736F9F1EF419E900FE05D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8736FA11EF419E900FE05D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD41DC50491E685DD8BEF3F9 /* Pods-LPIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPIM.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LPIM/Pods-LPIM.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8736F8F1EF419E900FE05D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D2888C98D7BA93B83B5C55C /* libPods-LPIM.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4976114EFCE0D4A1F62A8E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6C1B28BCA83EA70658C40C0 /* libPods-LPIM.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E50F03DCCA433CC7B0B90E41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C929AEECFE2CD54A0A700EC /* Pods-LPIM.debug.xcconfig */,
+				FD41DC50491E685DD8BEF3F9 /* Pods-LPIM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E8736F891EF419E900FE05D5 = {
+			isa = PBXGroup;
+			children = (
+				E8736F941EF419E900FE05D5 /* LPIM */,
+				E8736F931EF419E900FE05D5 /* Products */,
+				E50F03DCCA433CC7B0B90E41 /* Pods */,
+				A4976114EFCE0D4A1F62A8E9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E8736F931EF419E900FE05D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8736F921EF419E900FE05D5 /* LPIM.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8736F941EF419E900FE05D5 /* LPIM */ = {
+			isa = PBXGroup;
+			children = (
+				E8736F951EF419E900FE05D5 /* LPIMAppDelegate.swift */,
+				E8736F971EF419E900FE05D5 /* ViewController.swift */,
+				E8736F991EF419E900FE05D5 /* Main.storyboard */,
+				E8736F9C1EF419E900FE05D5 /* Assets.xcassets */,
+				E8736F9E1EF419E900FE05D5 /* LaunchScreen.storyboard */,
+				E8736FA11EF419E900FE05D5 /* Info.plist */,
+			);
+			path = LPIM;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8736F911EF419E900FE05D5 /* LPIM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8736FA41EF419E900FE05D5 /* Build configuration list for PBXNativeTarget "LPIM" */;
+			buildPhases = (
+				2D936C95B6830EE2A700AD67 /* [CP] Check Pods Manifest.lock */,
+				E8736F8E1EF419E900FE05D5 /* Sources */,
+				E8736F8F1EF419E900FE05D5 /* Frameworks */,
+				E8736F901EF419E900FE05D5 /* Resources */,
+				7C44974B56A115D41E33AA14 /* [CP] Embed Pods Frameworks */,
+				6658C06ACEFDA0B7970D4CCD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LPIM;
+			productName = LPIM;
+			productReference = E8736F921EF419E900FE05D5 /* LPIM.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8736F8A1EF419E900FE05D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = lipeng;
+				TargetAttributes = {
+					E8736F911EF419E900FE05D5 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E8736F8D1EF419E900FE05D5 /* Build configuration list for PBXProject "LPIM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8736F891EF419E900FE05D5;
+			productRefGroup = E8736F931EF419E900FE05D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8736F911EF419E900FE05D5 /* LPIM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8736F901EF419E900FE05D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8736FA01EF419E900FE05D5 /* LaunchScreen.storyboard in Resources */,
+				E8736F9D1EF419E900FE05D5 /* Assets.xcassets in Resources */,
+				E8736F9B1EF419E900FE05D5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D936C95B6830EE2A700AD67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6658C06ACEFDA0B7970D4CCD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LPIM/Pods-LPIM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C44974B56A115D41E33AA14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LPIM/Pods-LPIM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8736F8E1EF419E900FE05D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8736F981EF419E900FE05D5 /* ViewController.swift in Sources */,
+				E8736F961EF419E900FE05D5 /* LPIMAppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E8736F991EF419E900FE05D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8736F9A1EF419E900FE05D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8736F9E1EF419E900FE05D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8736F9F1EF419E900FE05D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8736FA21EF419E900FE05D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8736FA31EF419E900FE05D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8736FA51EF419E900FE05D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C929AEECFE2CD54A0A700EC /* Pods-LPIM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LPIM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lp.LPIM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E8736FA61EF419E900FE05D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD41DC50491E685DD8BEF3F9 /* Pods-LPIM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LPIM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lp.LPIM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8736F8D1EF419E900FE05D5 /* Build configuration list for PBXProject "LPIM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8736FA21EF419E900FE05D5 /* Debug */,
+				E8736FA31EF419E900FE05D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8736FA41EF419E900FE05D5 /* Build configuration list for PBXNativeTarget "LPIM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8736FA51EF419E900FE05D5 /* Debug */,
+				E8736FA61EF419E900FE05D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8736F8A1EF419E900FE05D5 /* Project object */;
+}
