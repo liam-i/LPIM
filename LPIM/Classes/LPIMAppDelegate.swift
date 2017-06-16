@@ -26,14 +26,7 @@ import NIMSDK
 //#import "NTESSDKConfigDelegate.h"
 //#import "NTESCellLayoutConfig.h"
 //#import "NTESSubscribeManager.h"
-//@import PushKit;
 
-
-//
-//NSString *NTESNotificationLogout = @"NTESNotificationLogout";
-//
-//
-//@end
 @UIApplicationMain
 class LPIMAppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -129,146 +122,146 @@ extension LPIMAppDelegate: NIMLoginManagerDelegate {
 
 }
 
-//#pragma mark - misc
 
-//
-//- (void)setupMainViewController
-//{
-//    LoginData *data = [[NTESLoginManager sharedManager] currentLoginData];
-//    NSString *account = [data account];
-//    NSString *token = [data token];
-//
-//    //如果有缓存用户名密码推荐使用自动登录
-//    if ([account length] && [token length])
-//    {
-//        NIMAutoLoginData *loginData = [[NIMAutoLoginData alloc] init];
-//        loginData.account = account;
-//        loginData.token = token;
-//
-//        [[[NIMSDK sharedSDK] loginManager] autoLogin:loginData];
-//        [[NTESServiceManager sharedManager] start];
-//        NTESMainTabController *mainTab = [[NTESMainTabController alloc] initWithNibName:nil bundle:nil];
-//        self.window.rootViewController = mainTab;
-//    }
-//    else
-//    {
-//        [self setupLoginViewController];
-//    }
-//}
-//
-//- (void)commonInitListenEvents
-//{
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(logout:)
-//                                                 name:NTESNotificationLogout
-//                                               object:nil];
-//
-//    [[[NIMSDK sharedSDK] loginManager] addDelegate:self];
-//}
-//
-//- (void)setupLoginViewController
-//{
-//    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
-//    NTESLoginViewController *loginController = [[NTESLoginViewController alloc] init];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginController];
-//    self.window.rootViewController = nav;
-//}
-//
-//#pragma mark - 注销
-//-(void)logout:(NSNotification*)note
-//{
-//    [self doLogout];
-//}
-//
-//- (void)doLogout
-//{
-//    [[NTESLoginManager sharedManager] setCurrentLoginData:nil];
-//    [[NTESServiceManager sharedManager] destory];
-//    [self setupLoginViewController];
-//}
-//
-//
-//
-//
-//#pragma mark - logic impl
-//- (void)setupServices
-//{
-//    [[NTESLogManager sharedManager] start];
-//    [[NTESNotificationCenter sharedCenter] start];
-//    [[NTESSubscribeManager sharedManager] start];
-//}
-//
-//- (void)setupNIMSDK
-//{
-//    //在注册 NIMSDK appKey 之前先进行配置信息的注册，如是否使用新路径,是否要忽略某些通知，是否需要多端同步未读数
-//    self.sdkConfigDelegate = [[NTESSDKConfigDelegate alloc] init];
-//    [[NIMSDKConfig sharedConfig] setDelegate:self.sdkConfigDelegate];
-//    [[NIMSDKConfig sharedConfig] setShouldSyncUnreadCount:YES];
-//    [[NIMSDKConfig sharedConfig] setMaxAutoLoginRetryTimes:10];
-//
-//
-//    //appkey 是应用的标识，不同应用之间的数据（用户、消息、群组等）是完全隔离的。
-//    //如需打网易云信 Demo 包，请勿修改 appkey ，开发自己的应用时，请替换为自己的 appkey 。
-//    //并请对应更换 Demo 代码中的获取好友列表、个人信息等网易云信 SDK 未提供的接口。
-//    NSString *appKey        = [[NTESDemoConfig sharedConfig] appKey];
-//    NIMSDKOption *option    = [NIMSDKOption optionWithAppKey:appKey];
-//    option.apnsCername      = [[NTESDemoConfig sharedConfig] apnsCername];
-//    option.pkCername        = [[NTESDemoConfig sharedConfig] pkCername];
-//    [[NIMSDK sharedSDK] registerWithOption:option];
-//
-//
-//    //注册自定义消息的解析器
-//    [NIMCustomObject registerCustomDecoder:[NTESCustomAttachmentDecoder new]];
-//
-//    //注册 NIMKit 自定义排版配置
-//    [[NIMKit sharedKit] registerLayoutConfig:[NTESCellLayoutConfig class]];
-//}
-//
-//#pragma mark - 登录错误回调
-//- (void)showAutoLoginErrorAlert:(NSError *)error
-//{
-//    NSString *message = [NTESSessionUtil formatAutoLoginMessage:error];
-//    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"自动登录失败"
-//                                                                message:message
-//                                                         preferredStyle:UIAlertControllerStyleAlert];
-//
-//    if ([error.domain isEqualToString:NIMLocalErrorDomain] &&
-//        error.code == NIMLocalErrorCodeAutoLoginRetryLimit)
-//    {
-//        UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"重试"
-//                                                              style:UIAlertActionStyleCancel
-//                                                            handler:^(UIAlertAction * _Nonnull action) {
-//                                                                LoginData *data = [[NTESLoginManager sharedManager] currentLoginData];
-//                                                                NSString *account = [data account];
-//                                                                NSString *token = [data token];
-//                                                                if ([account length] && [token length])
-//                                                                {
-//                                                                    NIMAutoLoginData *loginData = [[NIMAutoLoginData alloc] init];
-//                                                                    loginData.account = account;
-//                                                                    loginData.token = token;
-//
-//                                                                    [[[NIMSDK sharedSDK] loginManager] autoLogin:loginData];
-//                                                                }
-//                                                            }];
-//        [vc addAction:retryAction];
-//    }
-//
-//
-//
-//    UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:@"注销"
-//                                                           style:UIAlertActionStyleDestructive
-//                                                         handler:^(UIAlertAction * _Nonnull action) {
-//                                                             [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error) {
-//                                                                 [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
-//                                                             }];
-//                                                         }];
-//    [vc addAction:logoutAction];
-//
-//    [self.window.rootViewController presentViewController:vc
-//                                                 animated:YES
-//                                               completion:nil];
-//}
-//
-//
-//@end
+// MARK: - misc
+
+extension LPIMAppDelegate {
+    
+    func setupMainViewController() {
+        //    LoginData *data = [[NTESLoginManager sharedManager] currentLoginData];
+        //    NSString *account = [data account];
+        //    NSString *token = [data token];
+        //
+        //    //如果有缓存用户名密码推荐使用自动登录
+        //    if ([account length] && [token length])
+        //    {
+        //        NIMAutoLoginData *loginData = [[NIMAutoLoginData alloc] init];
+        //        loginData.account = account;
+        //        loginData.token = token;
+        //
+        //        [[[NIMSDK sharedSDK] loginManager] autoLogin:loginData];
+        //        [[NTESServiceManager sharedManager] start];
+        //        NTESMainTabController *mainTab = [[NTESMainTabController alloc] initWithNibName:nil bundle:nil];
+        //        self.window.rootViewController = mainTab;
+        //    }
+        //    else
+        //    {
+        //        [self setupLoginViewController];
+        //    }
+    }
+    
+    //- (void)setupLoginViewController
+    //{
+    //    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+    //    NTESLoginViewController *loginController = [[NTESLoginViewController alloc] init];
+    //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginController];
+    //    self.window.rootViewController = nav;
+    //}
+    
+    
+    
+    //- (void)commonInitListenEvents
+    //{
+    //    [[NSNotificationCenter defaultCenter] addObserver:self
+    //                                             selector:@selector(logout:)
+    //                                                 name:NTESNotificationLogout
+    //                                               object:nil];
+    //
+    //    [[[NIMSDK sharedSDK] loginManager] addDelegate:self];
+    //}
+    
+    //#pragma mark - 注销
+    //-(void)logout:(NSNotification*)note
+    //{
+    //    [self doLogout];
+    //}
+    //
+    //- (void)doLogout
+    //{
+    //    [[NTESLoginManager sharedManager] setCurrentLoginData:nil];
+    //    [[NTESServiceManager sharedManager] destory];
+    //    [self setupLoginViewController];
+    //}
+    
+    
+    //#pragma mark - logic impl
+    //- (void)setupServices
+    //{
+    //    [[NTESLogManager sharedManager] start];
+    //    [[NTESNotificationCenter sharedCenter] start];
+    //    [[NTESSubscribeManager sharedManager] start];
+    //}
+    //
+    //- (void)setupNIMSDK
+    //{
+    //    //在注册 NIMSDK appKey 之前先进行配置信息的注册，如是否使用新路径,是否要忽略某些通知，是否需要多端同步未读数
+    //    self.sdkConfigDelegate = [[NTESSDKConfigDelegate alloc] init];
+    //    [[NIMSDKConfig sharedConfig] setDelegate:self.sdkConfigDelegate];
+    //    [[NIMSDKConfig sharedConfig] setShouldSyncUnreadCount:YES];
+    //    [[NIMSDKConfig sharedConfig] setMaxAutoLoginRetryTimes:10];
+    //
+    //
+    //    //appkey 是应用的标识，不同应用之间的数据（用户、消息、群组等）是完全隔离的。
+    //    //如需打网易云信 Demo 包，请勿修改 appkey ，开发自己的应用时，请替换为自己的 appkey 。
+    //    //并请对应更换 Demo 代码中的获取好友列表、个人信息等网易云信 SDK 未提供的接口。
+    //    NSString *appKey        = [[NTESDemoConfig sharedConfig] appKey];
+    //    NIMSDKOption *option    = [NIMSDKOption optionWithAppKey:appKey];
+    //    option.apnsCername      = [[NTESDemoConfig sharedConfig] apnsCername];
+    //    option.pkCername        = [[NTESDemoConfig sharedConfig] pkCername];
+    //    [[NIMSDK sharedSDK] registerWithOption:option];
+    //
+    //
+    //    //注册自定义消息的解析器
+    //    [NIMCustomObject registerCustomDecoder:[NTESCustomAttachmentDecoder new]];
+    //
+    //    //注册 NIMKit 自定义排版配置
+    //    [[NIMKit sharedKit] registerLayoutConfig:[NTESCellLayoutConfig class]];
+    //}
+    //
+    //#pragma mark - 登录错误回调
+    //- (void)showAutoLoginErrorAlert:(NSError *)error
+    //{
+    //    NSString *message = [NTESSessionUtil formatAutoLoginMessage:error];
+    //    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"自动登录失败"
+    //                                                                message:message
+    //                                                         preferredStyle:UIAlertControllerStyleAlert];
+    //
+    //    if ([error.domain isEqualToString:NIMLocalErrorDomain] &&
+    //        error.code == NIMLocalErrorCodeAutoLoginRetryLimit)
+    //    {
+    //        UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"重试"
+    //                                                              style:UIAlertActionStyleCancel
+    //                                                            handler:^(UIAlertAction * _Nonnull action) {
+    //                                                                LoginData *data = [[NTESLoginManager sharedManager] currentLoginData];
+    //                                                                NSString *account = [data account];
+    //                                                                NSString *token = [data token];
+    //                                                                if ([account length] && [token length])
+    //                                                                {
+    //                                                                    NIMAutoLoginData *loginData = [[NIMAutoLoginData alloc] init];
+    //                                                                    loginData.account = account;
+    //                                                                    loginData.token = token;
+    //
+    //                                                                    [[[NIMSDK sharedSDK] loginManager] autoLogin:loginData];
+    //                                                                }
+    //                                                            }];
+    //        [vc addAction:retryAction];
+    //    }
+    //
+    //
+    //
+    //    UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:@"注销"
+    //                                                           style:UIAlertActionStyleDestructive
+    //                                                         handler:^(UIAlertAction * _Nonnull action) {
+    //                                                             [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error) {
+    //                                                                 [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
+    //                                                             }];
+    //                                                         }];
+    //    [vc addAction:logoutAction];
+    //
+    //    [self.window.rootViewController presentViewController:vc
+    //                                                 animated:YES
+    //                                               completion:nil];
+    //}
+}
+
 

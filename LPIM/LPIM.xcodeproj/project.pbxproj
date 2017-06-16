@@ -138,6 +138,7 @@
 				E8736F901EF419E900FE05D5 /* Resources */,
 				7C44974B56A115D41E33AA14 /* [CP] Embed Pods Frameworks */,
 				6658C06ACEFDA0B7970D4CCD /* [CP] Copy Pods Resources */,
+				E8736FBA1EF42C6500FE05D5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -240,6 +241,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LPIM/Pods-LPIM-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E8736FBA1EF42C6500FE05D5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:|LEOLI:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

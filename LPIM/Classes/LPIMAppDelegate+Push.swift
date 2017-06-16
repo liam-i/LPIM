@@ -9,6 +9,7 @@
 import UIKit
 import PushKit
 import NIMSDK
+import SwiftyJSON
 
 // TODO: - 适配 UserNotifications #available(iOS 10.0, *)
 
@@ -59,16 +60,9 @@ extension LPIMAppDelegate: PKPushRegistryDelegate {
     func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, forType type: PKPushType) {
         log.info("receive payload=\(payload.dictionaryPayload), type=\(type)")
         
-        //    NSNumber *badge = payload.dictionaryPayload[@][@];
-        //    if ([badge isKindOfClass:[NSNumber class]]) {
-        //        [UIApplication sharedApplication].applicationIconBadgeNumber = [badge integerValue];
-        //    }
-        
-        
-        if let badge = payload.dictionaryPayload["aps"]["badge"] {
-            
-        }
-        
+        let json = JSON(payload.dictionaryPayload)
+        let badge = json["aps"]["badge"].intValue
+        UIApplication.shared.applicationIconBadgeNumber = badge
     }
 }
 

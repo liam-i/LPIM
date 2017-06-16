@@ -7,3 +7,6 @@
 //
 
 import Foundation
+
+public let kLogoutNotification = Notification.Name("kLogoutNotification")
+
