@@ -18,12 +18,12 @@ struct LPRegisterData {
     var nickname: String
 }
 
-class LPRegisterTask: NSObject, LPServiceTask {
+class LPRegisterTask: NSObject, LPHTTPSessionTask {
     var data: LPRegisterData?
     var handler: LPRegisterHandler?
         
     // MARK: -
-    // MARK: - LPServiceTask
+    // MARK: - LPHTTPSessionTask
     
     func taskRequest() -> URLRequest? {
         guard let data = data else { return nil }

@@ -1,5 +1,5 @@
 //
-//  LPService.swift
+//  LPHTTPSession.swift
 //  LPIM
 //
 //  Created by lipeng on 2017/6/17.
@@ -9,15 +9,15 @@
 import Foundation
 import NIMSDK
 
-protocol LPServiceTask: NSObjectProtocol {
+protocol LPHTTPSessionTask: NSObjectProtocol {
     func taskRequest() -> URLRequest?
     
     // TODO: - errorMsg: String?参数需要优化
     func onGetResponse(jsonObject: Any?, errorMsg: String?)
 }
 
-class LPService {
-    static let shared: LPService = { return LPService() }()
+class LPHTTPSession {
+    static let shared: LPHTTPSession = { return LPHTTPSession() }()
     
     fileprivate lazy var session: URLSession = {
         return URLSession(configuration: URLSessionConfiguration.default)
@@ -37,8 +37,8 @@ class LPService {
     //}
 }
 
-extension LPService {
-    fileprivate func runTask(task: LPServiceTask) {
+extension LPHTTPSession {
+    fileprivate func runTask(task: LPHTTPSessionTask) {
         if !NIMSDK.shared().isUsingDemoAppKey() {
             // Demo Service中我们模拟了APP服务器所应该实现的部分功能，上层开发需要构建相应的APP服务器，而不是直接使用我们的DEMO服务器
             return task.onGetResponse(jsonObject: nil, errorMsg: "use your own app server")

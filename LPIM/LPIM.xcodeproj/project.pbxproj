@@ -49,12 +49,17 @@
 		E87370201EF47D3A00FE05D5 /* UIViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E873701B1EF47D3A00FE05D5 /* UIViewController+Swizzling.m */; };
 		E87370231EF47D8100FE05D5 /* UIView+NTES.m in Sources */ = {isa = PBXBuildFile; fileRef = E87370221EF47D8100FE05D5 /* UIView+NTES.m */; };
 		E87370261EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = E87370251EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.m */; };
-		E89D4E201EF5145E004C4207 /* LPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E1F1EF5145E004C4207 /* LPService.swift */; };
-		E89D4E221EF514A2004C4207 /* LPRegisterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E211EF514A2004C4207 /* LPRegisterTask.swift */; };
-		E89D4E241EF514D5004C4207 /* LPFetchChatroomTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E231EF514D5004C4207 /* LPFetchChatroomTask.swift */; };
 		E89D4E261EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */; };
 		E89D4E281EF58B00004C4207 /* LPFileLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */; };
 		E89D4E2A1EF59145004C4207 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E291EF59145004C4207 /* String+Extension.swift */; };
+		E89D4E351EF5A19F004C4207 /* LPFetchChatroomTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E321EF5A19F004C4207 /* LPFetchChatroomTask.swift */; };
+		E89D4E361EF5A19F004C4207 /* LPRegisterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E331EF5A19F004C4207 /* LPRegisterTask.swift */; };
+		E89D4E371EF5A19F004C4207 /* LPHTTPSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E341EF5A19F004C4207 /* LPHTTPSession.swift */; };
+		E89D4E3B1EF5A3BB004C4207 /* LPServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E3A1EF5A3BB004C4207 /* LPServiceManager.swift */; };
+		E89D4E3D1EF5A3EE004C4207 /* LPSessionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E3C1EF5A3EE004C4207 /* LPSessionUtil.swift */; };
+		E89D4E411EF5BA94004C4207 /* NIMLoginClientType+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E401EF5BA94004C4207 /* NIMLoginClientType+Name.swift */; };
+		E8CA1CAD1EF5BDAE00A9B898 /* UIViewController+FormSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CA1CAC1EF5BDAE00A9B898 /* UIViewController+FormSheet.swift */; };
+		E8CA1CAF1EF5BDBB00A9B898 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CA1CAE1EF5BDBB00A9B898 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,12 +118,18 @@
 		E87370221EF47D8100FE05D5 /* UIView+NTES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NTES.m"; sourceTree = "<group>"; };
 		E87370241EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+NTESFirstResponder.h"; sourceTree = "<group>"; };
 		E87370251EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+NTESFirstResponder.m"; sourceTree = "<group>"; };
-		E89D4E1F1EF5145E004C4207 /* LPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPService.swift; sourceTree = "<group>"; };
-		E89D4E211EF514A2004C4207 /* LPRegisterTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPRegisterTask.swift; sourceTree = "<group>"; };
-		E89D4E231EF514D5004C4207 /* LPFetchChatroomTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFetchChatroomTask.swift; sourceTree = "<group>"; };
 		E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPIMSDKConfigDelegate.swift; sourceTree = "<group>"; };
 		E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFileLocationHelper.swift; sourceTree = "<group>"; };
 		E89D4E291EF59145004C4207 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E89D4E321EF5A19F004C4207 /* LPFetchChatroomTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFetchChatroomTask.swift; sourceTree = "<group>"; };
+		E89D4E331EF5A19F004C4207 /* LPRegisterTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPRegisterTask.swift; sourceTree = "<group>"; };
+		E89D4E341EF5A19F004C4207 /* LPHTTPSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPHTTPSession.swift; sourceTree = "<group>"; };
+		E89D4E3A1EF5A3BB004C4207 /* LPServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPServiceManager.swift; sourceTree = "<group>"; };
+		E89D4E3C1EF5A3EE004C4207 /* LPSessionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPSessionUtil.swift; sourceTree = "<group>"; };
+		E89D4E401EF5BA94004C4207 /* NIMLoginClientType+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NIMLoginClientType+Name.swift"; sourceTree = "<group>"; };
+		E8CA1CAA1EF5BBA400A9B898 /* LPIM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LPIM.playground; sourceTree = "<group>"; };
+		E8CA1CAC1EF5BDAE00A9B898 /* UIViewController+FormSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+FormSheet.swift"; sourceTree = "<group>"; };
+		E8CA1CAE1EF5BDBB00A9B898 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		FD41DC50491E685DD8BEF3F9 /* Pods-LPIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPIM.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LPIM/Pods-LPIM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +191,7 @@
 				E8736F9E1EF419E900FE05D5 /* LaunchScreen.storyboard */,
 				E8736FA11EF419E900FE05D5 /* Info.plist */,
 				E8736FDB1EF4448C00FE05D5 /* icon_meeting_connecting@2x.gif */,
+				E8CA1CAA1EF5BBA400A9B898 /* LPIM.playground */,
 				E8736FDD1EF444B300FE05D5 /* NIMKitSettings.bundle */,
 				E8736FDE1EF444B300FE05D5 /* NIMKitResource.bundle */,
 				E8736FDF1EF444B300FE05D5 /* NIMKitEmoticon.bundle */,
@@ -205,13 +217,14 @@
 		E8736FAB1EF4208E00FE05D5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E8736FC81EF432B500FE05D5 /* Base */,
-				E8736FD71EF4399E00FE05D5 /* LPIBDesignableView.swift */,
-				E8736FFF1EF465FF00FE05D5 /* LPHUD.swift */,
 				E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */,
 				E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */,
-				E89D4E291EF59145004C4207 /* String+Extension.swift */,
-				E89D4E1E1EF51415004C4207 /* Service */,
+				E89D4E3A1EF5A3BB004C4207 /* LPServiceManager.swift */,
+				E89D4E3C1EF5A3EE004C4207 /* LPSessionUtil.swift */,
+				E8736FC81EF432B500FE05D5 /* Base */,
+				E89D4E391EF5A35C004C4207 /* Control */,
+				E89D4E381EF5A2E9004C4207 /* Extension */,
+				E89D4E311EF5A18A004C4207 /* HTTPSession */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -319,14 +332,34 @@
 			path = Addons;
 			sourceTree = "<group>";
 		};
-		E89D4E1E1EF51415004C4207 /* Service */ = {
+		E89D4E311EF5A18A004C4207 /* HTTPSession */ = {
 			isa = PBXGroup;
 			children = (
-				E89D4E1F1EF5145E004C4207 /* LPService.swift */,
-				E89D4E211EF514A2004C4207 /* LPRegisterTask.swift */,
-				E89D4E231EF514D5004C4207 /* LPFetchChatroomTask.swift */,
+				E89D4E321EF5A19F004C4207 /* LPFetchChatroomTask.swift */,
+				E89D4E331EF5A19F004C4207 /* LPRegisterTask.swift */,
+				E89D4E341EF5A19F004C4207 /* LPHTTPSession.swift */,
 			);
-			path = Service;
+			path = HTTPSession;
+			sourceTree = "<group>";
+		};
+		E89D4E381EF5A2E9004C4207 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E8CA1CAC1EF5BDAE00A9B898 /* UIViewController+FormSheet.swift */,
+				E8CA1CAE1EF5BDBB00A9B898 /* UIViewController+Alert.swift */,
+				E89D4E291EF59145004C4207 /* String+Extension.swift */,
+				E89D4E401EF5BA94004C4207 /* NIMLoginClientType+Name.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		E89D4E391EF5A35C004C4207 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				E8736FD71EF4399E00FE05D5 /* LPIBDesignableView.swift */,
+				E8736FFF1EF465FF00FE05D5 /* LPHUD.swift */,
+			);
+			name = Control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,31 +523,36 @@
 				E8736FB51EF424AF00FE05D5 /* LPIMAppDelegate+Push.swift in Sources */,
 				E8736FC61EF4329D00FE05D5 /* LPRegisterViewController.swift in Sources */,
 				E8736FCA1EF432C200FE05D5 /* LPBaseViewController.swift in Sources */,
+				E8CA1CAF1EF5BDBB00A9B898 /* UIViewController+Alert.swift in Sources */,
 				E8736FD51EF4349400FE05D5 /* LPMainTabBarController.swift in Sources */,
 				E873701C1EF47D3A00FE05D5 /* UINavigationBar+Swizzling.m in Sources */,
+				E89D4E3B1EF5A3BB004C4207 /* LPServiceManager.swift in Sources */,
 				E8736FFB1EF446F400FE05D5 /* LPUtils.swift in Sources */,
 				E8736FC01EF4324300FE05D5 /* LPLoginViewController.swift in Sources */,
 				E873701E1EF47D3A00FE05D5 /* UINavigationItem+Swizzling.m in Sources */,
+				E89D4E411EF5BA94004C4207 /* NIMLoginClientType+Name.swift in Sources */,
 				E8736FD21EF4332D00FE05D5 /* LPBaseView.swift in Sources */,
 				E873701D1EF47D3A00FE05D5 /* UINavigationController+Swizzling.m in Sources */,
 				E8736FD81EF4399E00FE05D5 /* LPIBDesignableView.swift in Sources */,
 				E8736FF91EF446D500FE05D5 /* LPKit.swift in Sources */,
 				E8736FBD1EF4320500FE05D5 /* LPLoginManager.swift in Sources */,
+				E89D4E371EF5A19F004C4207 /* LPHTTPSession.swift in Sources */,
 				E8736FFD1EF4485200FE05D5 /* LPConfig.swift in Sources */,
 				E89D4E281EF58B00004C4207 /* LPFileLocationHelper.swift in Sources */,
 				E89D4E261EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift in Sources */,
-				E89D4E201EF5145E004C4207 /* LPService.swift in Sources */,
 				E8736FCE1EF432E000FE05D5 /* LPBaseCollectionViewController.swift in Sources */,
 				E8736FD01EF432FE00FE05D5 /* LPBaseNavigationController.swift in Sources */,
 				E8736FCC1EF432D100FE05D5 /* LPBaseTableViewController.swift in Sources */,
+				E89D4E3D1EF5A3EE004C4207 /* LPSessionUtil.swift in Sources */,
+				E8CA1CAD1EF5BDAE00A9B898 /* UIViewController+FormSheet.swift in Sources */,
 				E87370201EF47D3A00FE05D5 /* UIViewController+Swizzling.m in Sources */,
 				E8736FB31EF4213C00FE05D5 /* LPIMAppDelegate.swift in Sources */,
-				E89D4E221EF514A2004C4207 /* LPRegisterTask.swift in Sources */,
 				E87370261EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.m in Sources */,
 				E87370001EF465FF00FE05D5 /* LPHUD.swift in Sources */,
+				E89D4E361EF5A19F004C4207 /* LPRegisterTask.swift in Sources */,
 				E87370231EF47D8100FE05D5 /* UIView+NTES.m in Sources */,
-				E89D4E241EF514D5004C4207 /* LPFetchChatroomTask.swift in Sources */,
 				E89D4E2A1EF59145004C4207 /* String+Extension.swift in Sources */,
+				E89D4E351EF5A19F004C4207 /* LPFetchChatroomTask.swift in Sources */,
 				E873701F1EF47D3A00FE05D5 /* UIView+Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

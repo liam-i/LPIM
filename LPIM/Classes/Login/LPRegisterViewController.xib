@@ -39,9 +39,10 @@
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             <connections>
                                 <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="EkV-vU-Piq"/>
+                                <outlet property="delegate" destination="-1" id="WWr-tS-EKB"/>
                             </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TA8-o5-6v0" userLabel="Sepataor">
@@ -59,9 +60,10 @@
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             <connections>
                                 <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="SNd-LT-Mk2"/>
+                                <outlet property="delegate" destination="-1" id="7hc-O1-yKn"/>
                             </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N35-Fd-Gxf" userLabel="Sepataor">
@@ -86,9 +88,10 @@
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             <connections>
                                 <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="BIb-gq-0aj"/>
+                                <outlet property="delegate" destination="-1" id="zBv-1O-77q"/>
                             </connections>
                         </textField>
                     </subviews>

@@ -36,7 +36,11 @@
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            <connections>
+                                <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="1VI-O1-m4g"/>
+                                <outlet property="delegate" destination="-1" id="lNC-ng-IQu"/>
+                            </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORe-Yk-OPL" userLabel="Sepataor">
                             <rect key="frame" x="11.5" y="62" width="351.5" height="1"/>
@@ -53,7 +57,11 @@
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            <connections>
+                                <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="PuN-hm-Wyj"/>
+                                <outlet property="delegate" destination="-1" id="5e6-FS-xte"/>
+                            </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I81-jh-uAv" userLabel="Sepataor">
                             <rect key="frame" x="11.5" y="124" width="351.5" height="1"/>

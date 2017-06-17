@@ -70,13 +70,15 @@ class LPRegisterViewController: LPBaseViewController {
     }
 
     func doneButtonClicked(_ sender: UIButton?) {
+        UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
+        
         if !check() { return }
         let data = LPRegisterData(account: accountTextField.text!,
                                   token: passwordTextField.text!.tokenByPassword(),
                                   nickname: nicknameTextField.text!)
         
         LPHUD.showHUD(at: nil, text: nil)
-        LPService.shared.registerUser(with: data) { (errorMsg) in
+        LPHTTPSession.shared.registerUser(with: data) { (errorMsg) in
             LPHUD.hide(true)
             
             if let errorMsg = errorMsg {

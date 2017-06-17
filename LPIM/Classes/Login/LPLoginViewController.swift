@@ -7,47 +7,13 @@
 //
 
 import UIKit
+import NIMSDK
 
-//#import "NTESLoginViewController.h"
-//#import "NTESSessionViewController.h"
-//#import "NTESSessionUtil.h"
-//#import "NTESMainTabController.h"
-//#import "UIView+Toast.h"
-//#import "SVProgressHUD.h"
-//#import "NTESService.h"
-//#import "UIView+NTES.h"
-//#import "NSString+NTES.h"
-//#import "NTESLoginManager.h"
-//#import "NTESNotificationCenter.h"
-//#import "UIActionSheet+NTESBlock.h"
-//#import "NTESLogManager.h"
-//#import "NTESRegisterViewController.h"
-//
-
-//@interface NTESLoginViewController ()<NTESRegisterViewControllerDelegate>
-//@property (weak, nonatomic) IBOutlet UIButton *;
-//@property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
-//@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
-//@property (strong, nonatomic) IBOutlet UIImageView *logo;
-//@end
 class LPLoginViewController: LPBaseViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     
-    //- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    //    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    //    if (self) {
-    //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
-    //
-    //    }
-    //    return self;
-    //}
-    //
-    //- (void)dealloc{
-    //    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    //}
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.setStatusBarStyle(preferredStatusBarStyle, animated: false)
@@ -73,180 +39,142 @@ class LPLoginViewController: LPBaseViewController {
                                                                    NSForegroundColorAttributeName: UIColor.white]
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
     func useClearBar() -> Bool {
         return true
     }
     
-    //- (void)viewDidLoad {
-    //    [super viewDidLoad];
-    //    self.usernameTextField.tintColor = [UIColor whiteColor];
-    //    [self.usernameTextField setValue:UIColorFromRGBA(0xffffff, .6f) forKeyPath:@"_placeholderLabel.textColor"];
-    //    self.passwordTextField.tintColor = [UIColor whiteColor];
-    //    [self.passwordTextField setValue:UIColorFromRGBA(0xffffff, .6f) forKeyPath:@"_placeholderLabel.textColor"];
-    //    UIButton *pwdClearButton = [self.passwordTextField valueForKey:@"_clearButton"];
-    //    [pwdClearButton setImage:[UIImage imageNamed:@"login_icon_clear"] forState:UIControlStateNormal];
-    //    UIButton *userNameClearButton = [self.usernameTextField valueForKey:@"_clearButton"];
-    //    [userNameClearButton setImage:[UIImage imageNamed:@"login_icon_clear"] forState:UIControlStateNormal];
-    //
-    //    [_registerButton setHidden:![[NIMSDK sharedSDK] isUsingDemoAppKey]];
-    //
-    //    self.navigationItem.rightBarButtonItem.enabled = NO;
-    //}
-    
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        resetTextField(usernameTextField)
+        resetTextField(passwordTextField)
+        
+        registerButton.isHidden = !NIMSDK.shared().isUsingDemoAppKey()
+        navigationItem.rightBarButtonItem?.isEnabled = false
+    }
     
     func loginButtonClicked(_ sender: UIButton?) {
-        //    [_usernameTextField resignFirstResponder];
-        //    [_passwordTextField resignFirstResponder];
-        //
-        //    NSString *username = [_usernameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        //    NSString *password = _passwordTextField.text;
-        //    [SVProgressHUD show];
-        //
-        //    NSString *loginAccount = username;
-        //    NSString *loginToken   = [password tokenByPassword];
-        //
-        //    //NIM SDK 只提供消息通道，并不依赖用户业务逻辑，开发者需要为每个APP用户指定一个NIM帐号，NIM只负责验证NIM的帐号即可(在服务器端集成)
-        //    //用户APP的帐号体系和 NIM SDK 并没有直接关系
-        //    //DEMO中使用 username 作为 NIM 的account ，md5(password) 作为 token
-        //    //开发者需要根据自己的实际情况配置自身用户系统和 NIM 用户系统的关系
-        //
-        //
-        //    [[[NIMSDK sharedSDK] loginManager] login:loginAccount
-        //                                       token:loginToken
-        //                                  completion:^(NSError *error) {
-        //                                      [SVProgressHUD dismiss];
-        //                                      if (error == nil)
-        //                                      {
-        //                                          LoginData *sdkData = [[LoginData alloc] init];
-        //                                          sdkData.account   = loginAccount;
-        //                                          sdkData.token     = loginToken;
-        //                                          [[NTESLoginManager sharedManager] setCurrentLoginData:sdkData];
-        //
-        //                                          [[NTESServiceManager sharedManager] start];
-        //                                          NTESMainTabController * mainTab = [[NTESMainTabController alloc] initWithNibName:nil bundle:nil];
-        //                                          [UIApplication sharedApplication].keyWindow.rootViewController = mainTab;
-        //                                      }
-        //                                      else
-        //                                      {
-        //                                          NSString *toast = [NSString stringWithFormat:@"登录失败 code: %zd",error.code];
-        //                                          [self.view makeToast:toast duration:2.0 position:CSToastPositionCenter];
-        //                                      }
-        //                                  }];
+        UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
+        
+        guard let account = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
+            return
+        }
+        guard let token = passwordTextField.text?.tokenByPassword() else {
+            return
+        }
+        
+        /// NIM SDK 只提供消息通道，并不依赖用户业务逻辑，开发者需要为每个APP用户指定一个NIM帐号，NIM只负责验证NIM的帐号即可(在服务器端集成)
+        /// 用户APP的帐号体系和 NIM SDK 并没有直接关系
+        /// DEMO中使用 username 作为 NIM 的account ，md5(password) 作为 token
+        /// 开发者需要根据自己的实际情况配置自身用户系统和 NIM 用户系统的关系
+        
+        LPHUD.showHUD(at: nil, text: nil)
+        NIMSDK.shared().loginManager.login(account, token: token) { (error) in
+            LPHUD.hide(true)
+            
+            if let error = error {
+                LPHUD.showError(at: nil, text: "登录失败 code:\(error._code)")
+                return
+            }
+            
+            let loginData = LPLoginData()
+            loginData.account = account
+            loginData.token = token
+            LPLoginManager.shared.currentLoginData = loginData
+            
+            LPServiceManager.shared.start()
+            let mainVC = LPMainTabBarController()
+            UIApplication.shared.keyWindow?.rootViewController = mainVC
+        }
     }
     
     
     func prepareShowLog(_ gesuture: UILongPressGestureRecognizer) {
-        //    if (gesuture.state == UIGestureRecognizerStateBegan) {
-        //        __weak typeof(self) wself = self;
-        //        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"查看SDK日志",@"查看Demo日志", nil];
-        //        [actionSheet showInView:self.view completionHandler:^(NSInteger index) {
-        //            switch (index) {
-        //                case 0:
-        //                    [wself showSDKLog];
-        //                    break;
-        //                case 1:
-        //                    [wself showDemoLog];
-        //                    break;
-        //                default:
-        //                    break;
-        //            }
-        //        }];
-        //    }
+        if gesuture.state != .began { return }
+        
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "查看SDK日志", style: .destructive, handler: { (_) in
+            //                    [wself showSDKLog];
+        }))
+        actionSheet.addAction(UIAlertAction(title: "查看Demo日志", style: .default, handler: { (_) in
+            //                    [wself showDemoLog];
+        }))
+        actionSheet.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        present(actionSheet, animated: true, completion: nil)
     }
     
     @IBAction func registerButtonClicked(_ sender: UIButton) {
-        
-        //    NTESRegisterViewController *vc = [NTESRegisterViewController new];
-        //    vc.delegate = self;
-        //    [self.navigationController pushViewController:vc animated:YES];
-        
         let vc = LPRegisterViewController(nibName: "LPRegisterViewController", bundle: nil)
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    //#pragma mark - UITextFieldDelegate
-    //- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    //    if ([string isEqualToString:@"\n"]) {
-    //        [self doLogin];
-    //        return NO;
-    //    }
-    //    return YES;
-    //}
-    //
-    //- (void)textFieldDidChange:(NSNotification*)notification{
-    //    if ([self.usernameTextField.text length] && [self.passwordTextField.text length])
-    //    {
-    //        self.navigationItem.rightBarButtonItem.enabled = YES;
-    //    }else{
-    //        self.navigationItem.rightBarButtonItem.enabled = NO;
-    //    }
-    //}
-    //
-    //- (void)textFieldDidBeginEditing:(UITextField *)textField{
-    //    if ([self.usernameTextField.text length] && [self.passwordTextField.text length])
-    //    {
-    //        self.navigationItem.rightBarButtonItem.enabled = YES;
-    //    }else{
-    //        self.navigationItem.rightBarButtonItem.enabled = NO;
-    //    }
-    //}
-    //
-    //#pragma mark - NTESRegisterViewControllerDelegate
-    //- (void)registDidComplete:(NSString *)account password:(NSString *)password{
-    //    if (account.length) {
-    //        self.usernameTextField.text = account;
-    //        self.passwordTextField.text = password;
-    //        self.navigationItem.rightBarButtonItem.enabled = YES;
-    //    }
-    //}
-    //
-    //#pragma mark - Private
-    //- (void)showSDKLog{
-    //    UIViewController *vc = [[NTESLogManager sharedManager] sdkLogViewController];
-    //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    //    [self presentViewController:nav
-    //                       animated:YES
-    //                     completion:nil];
-    //}
-    //
-    //- (void)showDemoLog{
-    //    UIViewController *logViewController = [[NTESLogManager sharedManager] demoLogViewController];
-    //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logViewController];
-    //    [self presentViewController:nav
-    //                       animated:YES
-    //                     completion:nil];
-    //}
-    //
-    //- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-    //{
-    //    [super touchesBegan:touches withEvent:event];
-    //    [_usernameTextField resignFirstResponder];
-    //    [_passwordTextField resignFirstResponder];
-    //}
-    //
-    //- (UIStatusBarStyle)preferredStatusBarStyle {
-    //    return UIStatusBarStyleLightContent;
-    //}
-    //
-    //
-    //- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-    //{
-    //    return UIInterfaceOrientationMaskPortrait;
-    //}
+        
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
+        var enabled = false
+        if let account = usernameTextField.text, let pwd = passwordTextField.text {
+            enabled = account.characters.count > 0 && pwd.characters.count > 0
+        }
+        navigationItem.rightBarButtonItem?.isEnabled = enabled
+    }
 }
 
-extension LPLoginViewController: LPRegisterViewControllerDelegate {
+// MARK: - Private
+
+extension LPLoginViewController {
+    
+    fileprivate func resetTextField(_ textField: UITextField) {
+        textField.tintColor = UIColor.white
+        let dict = [NSForegroundColorAttributeName: UIColor(hex6: 0xffffff, alpha: 0.6)]
+        let mas = NSAttributedString(string: textField.placeholder!, attributes: dict)
+        textField.attributedPlaceholder = mas
+        if let clearButton = textField.value(forKey: "_clearButton") as? UIButton {
+            clearButton.setImage(#imageLiteral(resourceName: "login_icon_clear"), for: .normal)
+        }
+    }
+    
+    func showSDKLog() {
+        //    UIViewController *vc = [[NTESLogManager sharedManager] sdkLogViewController];
+        //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        //    [self presentViewController:nav
+        //                       animated:YES
+        //                     completion:nil];
+    }
+    
+    func showDemoLog() {
+        //    UIViewController *logViewController = [[NTESLogManager sharedManager] demoLogViewController];
+        //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logViewController];
+        //    [self presentViewController:nav
+        //                       animated:YES
+        //                     completion:nil];
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+}
+
+// MARK: - Delegate / Notification
+
+extension LPLoginViewController: LPRegisterViewControllerDelegate, UITextFieldDelegate {
     
     // MARK: - LPRegisterViewControllerDelegate
     
     func registDidComplete(account: String?, password: String?) {
-        
+        usernameTextField.text = account
+        passwordTextField.text = password
+        navigationItem.rightBarButtonItem?.isEnabled = true
+    }
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == "\n" {
+            loginButtonClicked(nil)
+            return false
+        }
+        return true
     }
 }

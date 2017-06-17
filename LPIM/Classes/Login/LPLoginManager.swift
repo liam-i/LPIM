@@ -10,12 +10,16 @@ import Foundation
 
 //#import "NTESFileLocationHelper.h"
 
-class LPLoginData: NSCoding {
+class LPLoginData: NSObject, NSCoding {
     var account: String?
     var token: String?
     
-    required convenience init?(coder aDecoder: NSCoder) {
-        self.init()
+    override init() {
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init()
         account = aDecoder.decodeObject(forKey: "account") as? String
         token = aDecoder.decodeObject(forKey: "token") as? String
     }

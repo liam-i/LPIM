@@ -54,37 +54,50 @@ extension LPIMAppDelegate: NIMLoginManagerDelegate {
     
     // MARK: - NIMLoginManagerDelegate
     
-    //#pragma NIMLoginManagerDelegate
-    //-(void)onKick:(NIMKickReason)code clientType:(NIMLoginClientType)clientType
-    //{
-    //    NSString *reason = @"你被踢下线";
-    //    switch (code) {
-    //        case NIMKickReasonByClient:
-    //        case NIMKickReasonByClientManually:{
-    //            NSString *clientName = [NTESClientUtil clientName:clientType];
-    //            reason = clientName.length ? [NSString stringWithFormat:@"你的帐号被%@端踢出下线，请注意帐号信息安全",clientName] : @"你的帐号被踢出下线，请注意帐号信息安全";
-    //            break;
-    //        }
-    //        case NIMKickReasonByServer:
-    //            reason = @"你被服务器踢下线";
-    //            break;
-    //        default:
-    //            break;
-    //    }
-    //    [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error) {
-    //        [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
-    //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"下线通知" message:reason delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    //        [alert show];
-    //    }];
-    //}
-    //
-    //- (void)onAutoLoginFailed:(NSError *)error
-    //{
-    //    //只有连接发生严重错误才会走这个回调，在这个回调里应该登出，返回界面等待用户手动重新登录。
-    //    DDLogInfo(@"onAutoLoginFailed %zd",error.code);
-    //    [self showAutoLoginErrorAlert:error];
-    //}
+    func onKick(_ code: NIMKickReason, clientType: NIMLoginClientType) {
+        var reason = "你被踢下线"
+        switch code {
+        case .byClient, .byClientManually:
+            let clientName = clientType.clientName
+            reason = clientName.characters.count > 0 ? "你的帐号被“\(clientName)”端踢出下线，请注意帐号信息安全" : "你的帐号被踢出下线，请注意帐号信息安全"
+        case .byServer:
+            reason = "你被服务器踢下线"
+        }
+        
+        NIMSDK.shared().loginManager.logout { (error) in
+            NotificationCenter.default.post(name: kLogoutNotification, object: nil)
+            self.window?.rootViewController?.showAlert("下线通知", msg: reason)
+        }
+    }
+    
+    func onAutoLoginFailed(_ error: Error) {
+        let error = error as NSError
 
+        /// 只有连接发生严重错误才会走这个回调，在这个回调里应该登出，返回界面等待用户手动重新登录。
+        log.error(error)
+        let msg = LPSessionUtil.formatAutoLoginMessage(error: error)
+        let alert = UIAlertController(title: "自动登录失败", message: msg, preferredStyle: .alert)
+        if error.domain == NIMLocalErrorDomain && error.code == NIMLocalErrorCode.autoLoginRetryLimit.rawValue {
+            alert.addAction(UIAlertAction(title: "重试", style: .cancel, handler: { (_) in
+                guard let data = LPLoginManager.shared.currentLoginData else { return }
+                guard let account = data.account else { return }
+                guard let token = data.token else { return }
+                if account.characters.count > 0 && token.characters.count > 0 {
+                    let loginData = NIMAutoLoginData()
+                    loginData.account = account
+                    loginData.token = token
+                    NIMSDK.shared().loginManager.autoLogin(loginData)
+                }
+            }))
+        }
+        
+        alert.addAction(UIAlertAction(title: "注销", style: .destructive, handler: { (_) in
+            NIMSDK.shared().loginManager.logout({ (error) in
+                NotificationCenter.default.post(name: kLogoutNotification, object: nil)
+            })
+        }))
+        window?.rootViewController?.present(alert, animated: true, completion: nil)
+    }
 }
 
 
@@ -98,14 +111,14 @@ extension LPIMAppDelegate {
             , let account = data.account, account.characters.count > 0
             , let token = data.token, token.characters.count > 0 {
             
-            //        NIMAutoLoginData *loginData = [[NIMAutoLoginData alloc] init];
-            //        loginData.account = account;
-            //        loginData.token = token;
-            //
-            //        [[[NIMSDK sharedSDK] loginManager] autoLogin:loginData];
-            //        [[NTESServiceManager sharedManager] start];
-            //        NTESMainTabController *mainTab = [[NTESMainTabController alloc] initWithNibName:nil bundle:nil];
-            //        self.window.rootViewController = mainTab;
+            let loginData = NIMAutoLoginData()
+            loginData.account = account
+            loginData.token = token
+            
+            NIMSDK.shared().loginManager.autoLogin(loginData)
+            LPServiceManager.shared.start()
+            let mainVC = LPMainTabBarController()
+            window?.rootViewController = mainVC
         } else {
             setupLoginViewController()
         }
@@ -131,7 +144,7 @@ extension LPIMAppDelegate {
     
     func logoutNotification(_ note: Notification) {
         LPLoginManager.shared.currentLoginData = nil
-        //[[NTESServiceManager sharedManager] destory];
+        LPServiceManager.shared.destory()
         setupLoginViewController()
     }
     
@@ -163,51 +176,6 @@ extension LPIMAppDelegate {
         /// 注册 NIMKit 自定义排版配置
         //[[NIMKit sharedKit] registerLayoutConfig:[NTESCellLayoutConfig class]];
     }
-    
-    //#pragma mark - 登录错误回调
-    //- (void)showAutoLoginErrorAlert:(NSError *)error
-    //{
-    //    NSString *message = [NTESSessionUtil formatAutoLoginMessage:error];
-    //    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"自动登录失败"
-    //                                                                message:message
-    //                                                         preferredStyle:UIAlertControllerStyleAlert];
-    //
-    //    if ([error.domain isEqualToString:NIMLocalErrorDomain] &&
-    //        error.code == NIMLocalErrorCodeAutoLoginRetryLimit)
-    //    {
-    //        UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"重试"
-    //                                                              style:UIAlertActionStyleCancel
-    //                                                            handler:^(UIAlertAction * _Nonnull action) {
-    //                                                                LoginData *data = [[NTESLoginManager sharedManager] currentLoginData];
-    //                                                                NSString *account = [data account];
-    //                                                                NSString *token = [data token];
-    //                                                                if ([account length] && [token length])
-    //                                                                {
-    //                                                                    NIMAutoLoginData *loginData = [[NIMAutoLoginData alloc] init];
-    //                                                                    loginData.account = account;
-    //                                                                    loginData.token = token;
-    //
-    //                                                                    [[[NIMSDK sharedSDK] loginManager] autoLogin:loginData];
-    //                                                                }
-    //                                                            }];
-    //        [vc addAction:retryAction];
-    //    }
-    //
-    //
-    //
-    //    UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:@"注销"
-    //                                                           style:UIAlertActionStyleDestructive
-    //                                                         handler:^(UIAlertAction * _Nonnull action) {
-    //                                                             [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error) {
-    //                                                                 [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
-    //                                                             }];
-    //                                                         }];
-    //    [vc addAction:logoutAction];
-    //
-    //    [self.window.rootViewController presentViewController:vc
-    //                                                 animated:YES
-    //                                               completion:nil];
-    //}
 }
 
 
