@@ -57,7 +57,7 @@ class LPRegisterViewController: LPBaseViewController {
         navigationItem.backBarButtonItem = backItem
     }
     
-    @IBAction func textFieldValueChanged(_ sender: UITextField) {
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         var enabled = false
         if let account = accountTextField.text, let nickname = nicknameTextField.text, let pwd = passwordTextField.text {
             enabled = account.characters.count > 0 && nickname.characters.count > 0 && pwd.characters.count > 0
@@ -72,7 +72,7 @@ class LPRegisterViewController: LPBaseViewController {
     func doneButtonClicked(_ sender: UIButton?) {
         if !check() { return }
         let data = LPRegisterData(account: accountTextField.text!,
-                                  token: passwordTextField.text!,
+                                  token: passwordTextField.text!.tokenByPassword(),
                                   nickname: nicknameTextField.text!)
         
         LPHUD.showHUD(at: nil, text: nil)
@@ -86,7 +86,7 @@ class LPRegisterViewController: LPBaseViewController {
             }
             
             LPHUD.showSuccess(at: nil, text: "注册成功")
-            self.delegate?.registDidComplete(account: data.account, password: data.token)
+            self.delegate?.registDidComplete(account: data.account, password: self.passwordTextField.text)
             self.navigationController?.popViewController(animated: true)
         }
     }

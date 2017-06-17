@@ -24,7 +24,6 @@
 		E8736FD21EF4332D00FE05D5 /* LPBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FD11EF4332D00FE05D5 /* LPBaseView.swift */; };
 		E8736FD51EF4349400FE05D5 /* LPMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FD41EF4349400FE05D5 /* LPMainTabBarController.swift */; };
 		E8736FD81EF4399E00FE05D5 /* LPIBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FD71EF4399E00FE05D5 /* LPIBDesignableView.swift */; };
-		E8736FDA1EF4444600FE05D5 /* LPFileLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FD91EF4444600FE05D5 /* LPFileLocationHelper.swift */; };
 		E8736FDC1EF4448C00FE05D5 /* icon_meeting_connecting@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = E8736FDB1EF4448C00FE05D5 /* icon_meeting_connecting@2x.gif */; };
 		E8736FE01EF444B300FE05D5 /* NIMKitSettings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8736FDD1EF444B300FE05D5 /* NIMKitSettings.bundle */; };
 		E8736FE11EF444B300FE05D5 /* NIMKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8736FDE1EF444B300FE05D5 /* NIMKitResource.bundle */; };
@@ -53,6 +52,9 @@
 		E89D4E201EF5145E004C4207 /* LPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E1F1EF5145E004C4207 /* LPService.swift */; };
 		E89D4E221EF514A2004C4207 /* LPRegisterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E211EF514A2004C4207 /* LPRegisterTask.swift */; };
 		E89D4E241EF514D5004C4207 /* LPFetchChatroomTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E231EF514D5004C4207 /* LPFetchChatroomTask.swift */; };
+		E89D4E261EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */; };
+		E89D4E281EF58B00004C4207 /* LPFileLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */; };
+		E89D4E2A1EF59145004C4207 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E291EF59145004C4207 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +79,6 @@
 		E8736FD11EF4332D00FE05D5 /* LPBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPBaseView.swift; sourceTree = "<group>"; };
 		E8736FD41EF4349400FE05D5 /* LPMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPMainTabBarController.swift; sourceTree = "<group>"; };
 		E8736FD71EF4399E00FE05D5 /* LPIBDesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPIBDesignableView.swift; sourceTree = "<group>"; };
-		E8736FD91EF4444600FE05D5 /* LPFileLocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFileLocationHelper.swift; sourceTree = "<group>"; };
 		E8736FDB1EF4448C00FE05D5 /* icon_meeting_connecting@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "icon_meeting_connecting@2x.gif"; sourceTree = "<group>"; };
 		E8736FDD1EF444B300FE05D5 /* NIMKitSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMKitSettings.bundle; sourceTree = "<group>"; };
 		E8736FDE1EF444B300FE05D5 /* NIMKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMKitResource.bundle; sourceTree = "<group>"; };
@@ -115,6 +116,9 @@
 		E89D4E1F1EF5145E004C4207 /* LPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPService.swift; sourceTree = "<group>"; };
 		E89D4E211EF514A2004C4207 /* LPRegisterTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPRegisterTask.swift; sourceTree = "<group>"; };
 		E89D4E231EF514D5004C4207 /* LPFetchChatroomTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFetchChatroomTask.swift; sourceTree = "<group>"; };
+		E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPIMSDKConfigDelegate.swift; sourceTree = "<group>"; };
+		E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFileLocationHelper.swift; sourceTree = "<group>"; };
+		E89D4E291EF59145004C4207 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FD41DC50491E685DD8BEF3F9 /* Pods-LPIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPIM.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LPIM/Pods-LPIM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +208,9 @@
 				E8736FC81EF432B500FE05D5 /* Base */,
 				E8736FD71EF4399E00FE05D5 /* LPIBDesignableView.swift */,
 				E8736FFF1EF465FF00FE05D5 /* LPHUD.swift */,
+				E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */,
+				E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */,
+				E89D4E291EF59145004C4207 /* String+Extension.swift */,
 				E89D4E1E1EF51415004C4207 /* Service */,
 			);
 			path = Common;
@@ -215,7 +222,6 @@
 				E8736FF81EF446D500FE05D5 /* LPKit.swift */,
 				E8736FFA1EF446F400FE05D5 /* LPUtils.swift */,
 				E8736FFC1EF4485200FE05D5 /* LPConfig.swift */,
-				E8736FD91EF4444600FE05D5 /* LPFileLocationHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -485,7 +491,6 @@
 				E8736FC61EF4329D00FE05D5 /* LPRegisterViewController.swift in Sources */,
 				E8736FCA1EF432C200FE05D5 /* LPBaseViewController.swift in Sources */,
 				E8736FD51EF4349400FE05D5 /* LPMainTabBarController.swift in Sources */,
-				E8736FDA1EF4444600FE05D5 /* LPFileLocationHelper.swift in Sources */,
 				E873701C1EF47D3A00FE05D5 /* UINavigationBar+Swizzling.m in Sources */,
 				E8736FFB1EF446F400FE05D5 /* LPUtils.swift in Sources */,
 				E8736FC01EF4324300FE05D5 /* LPLoginViewController.swift in Sources */,
@@ -496,6 +501,8 @@
 				E8736FF91EF446D500FE05D5 /* LPKit.swift in Sources */,
 				E8736FBD1EF4320500FE05D5 /* LPLoginManager.swift in Sources */,
 				E8736FFD1EF4485200FE05D5 /* LPConfig.swift in Sources */,
+				E89D4E281EF58B00004C4207 /* LPFileLocationHelper.swift in Sources */,
+				E89D4E261EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift in Sources */,
 				E89D4E201EF5145E004C4207 /* LPService.swift in Sources */,
 				E8736FCE1EF432E000FE05D5 /* LPBaseCollectionViewController.swift in Sources */,
 				E8736FD01EF432FE00FE05D5 /* LPBaseNavigationController.swift in Sources */,
@@ -507,6 +514,7 @@
 				E87370001EF465FF00FE05D5 /* LPHUD.swift in Sources */,
 				E87370231EF47D8100FE05D5 /* UIView+NTES.m in Sources */,
 				E89D4E241EF514D5004C4207 /* LPFetchChatroomTask.swift in Sources */,
+				E89D4E2A1EF59145004C4207 /* String+Extension.swift in Sources */,
 				E873701F1EF47D3A00FE05D5 /* UIView+Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

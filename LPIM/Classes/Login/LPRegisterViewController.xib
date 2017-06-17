@@ -41,7 +41,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <action selector="textFieldValueChanged:" destination="-1" eventType="valueChanged" id="Obp-oM-EyF"/>
+                                <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="EkV-vU-Piq"/>
                             </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TA8-o5-6v0" userLabel="Sepataor">
@@ -61,7 +61,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <action selector="textFieldValueChanged:" destination="-1" eventType="valueChanged" id="YIB-rH-unS"/>
+                                <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="SNd-LT-Mk2"/>
                             </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N35-Fd-Gxf" userLabel="Sepataor">
@@ -88,7 +88,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
-                                <action selector="textFieldValueChanged:" destination="-1" eventType="valueChanged" id="Ws9-b7-cAW"/>
+                                <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="BIb-gq-0aj"/>
                             </connections>
                         </textField>
                     </subviews>
