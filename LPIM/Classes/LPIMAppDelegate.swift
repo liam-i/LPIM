@@ -8,24 +8,7 @@
 
 import UIKit
 import NIMSDK
-
-//#import "NTESAppDelegate.h"
-//#import "NTESLoginViewController.h"
-//#import "UIView+Toast.h"
-//#import "NTESService.h"
-//#import "NTESNotificationCenter.h"
-//#import "NTESLogManager.h"
-//#import "NTESDemoConfig.h"
-//#import "NTESSessionUtil.h"
-//#import "NTESMainTabController.h"
-//#import "NTESLoginManager.h"
-//#import "NTESCustomAttachmentDecoder.h"
-//#import "NTESClientUtil.h"
-//#import "NTESNotificationCenter.h"
-//#import "NIMKit.h"
-//#import "NTESSDKConfigDelegate.h"
-//#import "NTESCellLayoutConfig.h"
-//#import "NTESSubscribeManager.h"
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class LPIMAppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,49 +19,33 @@ class LPIMAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //    [self setupNIMSDK];
-        //    [self setupServices];
-        //    [self registerPushService];
-        //    [self commonInitListenEvents];
-        //
-        //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        //    self.window.backgroundColor = [UIColor grayColor];
-        //    [self.window makeKeyAndVisible];
-        //    [application setStatusBarStyle:UIStatusBarStyleLightContent];
-        //
-        //    [self setupMainViewController];
-        //
-        //
-        //    DDLogInfo(@"launch with options %@",launchOptions);
+        IQKeyboardManager.sharedManager().enable = true
+        
+        setupNIMSDK()
+        setupServices()
+        registerPushService()
+        setupListenEvents()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.gray
+        window?.makeKeyAndVisible()
+        application.setStatusBarStyle(.lightContent, animated: true)
+        
+        setupMainViewController()
+        
+        log.info("launch with options \(String(describing: launchOptions))")
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        
-    }
     
-    
-
     func applicationDidEnterBackground(_ application: UIApplication) {
-        //    NSInteger count = [[[NIMSDK sharedSDK] conversationManager] allUnreadCount];
-        //    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:count];
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
+        let count = NIMSDK.shared().conversationManager.allUnreadCount()
+        UIApplication.shared.applicationIconBadgeNumber = count
     }
     
-    //- (void)dealloc
-    //{
-    //    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    //    [[[NIMSDK sharedSDK] loginManager] removeDelegate:self];
-    //}
-
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        NIMSDK.shared().loginManager.remove(self)
+    }
 }
 
 
@@ -128,96 +95,81 @@ extension LPIMAppDelegate: NIMLoginManagerDelegate {
 extension LPIMAppDelegate {
     
     func setupMainViewController() {
-        //    LoginData *data = [[NTESLoginManager sharedManager] currentLoginData];
-        //    NSString *account = [data account];
-        //    NSString *token = [data token];
-        //
-        //    //如果有缓存用户名密码推荐使用自动登录
-        //    if ([account length] && [token length])
-        //    {
-        //        NIMAutoLoginData *loginData = [[NIMAutoLoginData alloc] init];
-        //        loginData.account = account;
-        //        loginData.token = token;
-        //
-        //        [[[NIMSDK sharedSDK] loginManager] autoLogin:loginData];
-        //        [[NTESServiceManager sharedManager] start];
-        //        NTESMainTabController *mainTab = [[NTESMainTabController alloc] initWithNibName:nil bundle:nil];
-        //        self.window.rootViewController = mainTab;
-        //    }
-        //    else
-        //    {
-        //        [self setupLoginViewController];
-        //    }
+        // 如果有缓存用户名密码推荐使用自动登录
+        if let data = LPLoginManager.shared.currentLoginData
+            , let account = data.account, account.characters.count > 0
+            , let token = data.token, token.characters.count > 0 {
+            
+            //        NIMAutoLoginData *loginData = [[NIMAutoLoginData alloc] init];
+            //        loginData.account = account;
+            //        loginData.token = token;
+            //
+            //        [[[NIMSDK sharedSDK] loginManager] autoLogin:loginData];
+            //        [[NTESServiceManager sharedManager] start];
+            //        NTESMainTabController *mainTab = [[NTESMainTabController alloc] initWithNibName:nil bundle:nil];
+            //        self.window.rootViewController = mainTab;
+        } else {
+            setupLoginViewController()
+        }
+        
     }
     
-    //- (void)setupLoginViewController
-    //{
-    //    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
-    //    NTESLoginViewController *loginController = [[NTESLoginViewController alloc] init];
-    //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginController];
-    //    self.window.rootViewController = nav;
-    //}
+    func setupLoginViewController() {
+        window?.rootViewController?.dismiss(animated: true, completion: nil)
+        
+        let loginVC = LPLoginViewController(nibName: "LPLoginViewController", bundle: nil)
+        window?.rootViewController = UINavigationController(rootViewController: loginVC)
+    }
     
+    func setupListenEvents() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(logoutNotification),
+                                               name: kLogoutNotification,
+                                               object: nil)
+        NIMSDK.shared().loginManager.add(self)
+    }
     
+    // MARK: - 注销
     
-    //- (void)commonInitListenEvents
-    //{
-    //    [[NSNotificationCenter defaultCenter] addObserver:self
-    //                                             selector:@selector(logout:)
-    //                                                 name:NTESNotificationLogout
-    //                                               object:nil];
-    //
-    //    [[[NIMSDK sharedSDK] loginManager] addDelegate:self];
-    //}
+    func logoutNotification(_ note: Notification) {
+        LPLoginManager.shared.currentLoginData = nil
+        //[[NTESServiceManager sharedManager] destory];
+        setupLoginViewController()
+    }
     
-    //#pragma mark - 注销
-    //-(void)logout:(NSNotification*)note
-    //{
-    //    [self doLogout];
-    //}
-    //
-    //- (void)doLogout
-    //{
-    //    [[NTESLoginManager sharedManager] setCurrentLoginData:nil];
-    //    [[NTESServiceManager sharedManager] destory];
-    //    [self setupLoginViewController];
-    //}
+    // MARK: - logic impl
     
+    func setupServices() {
+        //    [[NTESLogManager sharedManager] start];
+        //    [[NTESNotificationCenter sharedCenter] start];
+        //    [[NTESSubscribeManager sharedManager] start];
+    }
     
-    //#pragma mark - logic impl
-    //- (void)setupServices
-    //{
-    //    [[NTESLogManager sharedManager] start];
-    //    [[NTESNotificationCenter sharedCenter] start];
-    //    [[NTESSubscribeManager sharedManager] start];
-    //}
-    //
-    //- (void)setupNIMSDK
-    //{
-    //    //在注册 NIMSDK appKey 之前先进行配置信息的注册，如是否使用新路径,是否要忽略某些通知，是否需要多端同步未读数
-    //    self.sdkConfigDelegate = [[NTESSDKConfigDelegate alloc] init];
-    //    [[NIMSDKConfig sharedConfig] setDelegate:self.sdkConfigDelegate];
-    //    [[NIMSDKConfig sharedConfig] setShouldSyncUnreadCount:YES];
-    //    [[NIMSDKConfig sharedConfig] setMaxAutoLoginRetryTimes:10];
-    //
-    //
-    //    //appkey 是应用的标识，不同应用之间的数据（用户、消息、群组等）是完全隔离的。
-    //    //如需打网易云信 Demo 包，请勿修改 appkey ，开发自己的应用时，请替换为自己的 appkey 。
-    //    //并请对应更换 Demo 代码中的获取好友列表、个人信息等网易云信 SDK 未提供的接口。
-    //    NSString *appKey        = [[NTESDemoConfig sharedConfig] appKey];
-    //    NIMSDKOption *option    = [NIMSDKOption optionWithAppKey:appKey];
-    //    option.apnsCername      = [[NTESDemoConfig sharedConfig] apnsCername];
-    //    option.pkCername        = [[NTESDemoConfig sharedConfig] pkCername];
-    //    [[NIMSDK sharedSDK] registerWithOption:option];
-    //
-    //
-    //    //注册自定义消息的解析器
-    //    [NIMCustomObject registerCustomDecoder:[NTESCustomAttachmentDecoder new]];
-    //
-    //    //注册 NIMKit 自定义排版配置
-    //    [[NIMKit sharedKit] registerLayoutConfig:[NTESCellLayoutConfig class]];
-    //}
-    //
+    func setupNIMSDK() {
+        //    //在注册 NIMSDK appKey 之前先进行配置信息的注册，如是否使用新路径,是否要忽略某些通知，是否需要多端同步未读数
+        //    self.sdkConfigDelegate = [[NTESSDKConfigDelegate alloc] init];
+        //    [[NIMSDKConfig sharedConfig] setDelegate:self.sdkConfigDelegate];
+        //    [[NIMSDKConfig sharedConfig] setShouldSyncUnreadCount:YES];
+        //    [[NIMSDKConfig sharedConfig] setMaxAutoLoginRetryTimes:10];
+        //
+        //
+        //    //appkey 是应用的标识，不同应用之间的数据（用户、消息、群组等）是完全隔离的。
+        //    //如需打网易云信 Demo 包，请勿修改 appkey ，开发自己的应用时，请替换为自己的 appkey 。
+        //    //并请对应更换 Demo 代码中的获取好友列表、个人信息等网易云信 SDK 未提供的接口。
+        //    NSString *appKey        = [[NTESDemoConfig sharedConfig] appKey];
+        //    NIMSDKOption *option    = [NIMSDKOption optionWithAppKey:appKey];
+        //    option.apnsCername      = [[NTESDemoConfig sharedConfig] apnsCername];
+        //    option.pkCername        = [[NTESDemoConfig sharedConfig] pkCername];
+        //    [[NIMSDK sharedSDK] registerWithOption:option];
+        //
+        //
+        //    //注册自定义消息的解析器
+        //    [NIMCustomObject registerCustomDecoder:[NTESCustomAttachmentDecoder new]];
+        //
+        //    //注册 NIMKit 自定义排版配置
+        //    [[NIMKit sharedKit] registerLayoutConfig:[NTESCellLayoutConfig class]];
+    }
+    
     //#pragma mark - 登录错误回调
     //- (void)showAutoLoginErrorAlert:(NSError *)error
     //{

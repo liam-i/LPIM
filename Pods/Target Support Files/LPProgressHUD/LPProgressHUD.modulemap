@@ -1,0 +1,6 @@
+framework module LPProgressHUD {
+  umbrella header "LPProgressHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}
