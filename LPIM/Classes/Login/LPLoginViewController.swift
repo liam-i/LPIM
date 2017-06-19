@@ -39,10 +39,6 @@ class LPLoginViewController: LPBaseViewController {
                                                                    NSForegroundColorAttributeName: UIColor.white]
     }
     
-    func useClearBar() -> Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         resetTextField(usernameTextField)

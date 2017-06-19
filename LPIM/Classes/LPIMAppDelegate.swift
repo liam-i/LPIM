@@ -117,8 +117,7 @@ extension LPIMAppDelegate {
             
             NIMSDK.shared().loginManager.autoLogin(loginData)
             LPServiceManager.shared.start()
-            let mainVC = LPMainTabBarController()
-            window?.rootViewController = mainVC
+            window?.rootViewController = LPMainTabBarController()
         } else {
             setupLoginViewController()
         }
@@ -129,7 +128,7 @@ extension LPIMAppDelegate {
         window?.rootViewController?.dismiss(animated: true, completion: nil)
         
         let loginVC = LPLoginViewController(nibName: "LPLoginViewController", bundle: nil)
-        window?.rootViewController = UINavigationController(rootViewController: loginVC)
+        window?.rootViewController = LPBaseNavigationController(rootViewController: loginVC, clearBar: true)
     }
     
     func setupListenEvents() {

@@ -25,10 +25,6 @@ class LPRegisterViewController: LPBaseViewController {
         setupNav()
     }
     
-    func useClearBar() -> Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         resetTextField(accountTextField)

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		98F629835F46F8063401FB94 /* Pods_LPIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496BC4BB5FCC451A8F4F130 /* Pods_LPIM.framework */; };
+		E807E6581EF7C14200C35E77 /* LPSessionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E807E6571EF7C14200C35E77 /* LPSessionListViewController.swift */; };
+		E807E65A1EF7C16B00C35E77 /* LPContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E807E6591EF7C16B00C35E77 /* LPContactViewController.swift */; };
+		E807E65C1EF7C18C00C35E77 /* LPChatRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E807E65B1EF7C18C00C35E77 /* LPChatRoomListViewController.swift */; };
+		E807E65E1EF7C1A500C35E77 /* LPSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E807E65D1EF7C1A500C35E77 /* LPSettingViewController.swift */; };
 		E8736F9D1EF419E900FE05D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8736F9C1EF419E900FE05D5 /* Assets.xcassets */; };
 		E8736FA01EF419E900FE05D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8736F9E1EF419E900FE05D5 /* LaunchScreen.storyboard */; };
 		E8736FB31EF4213C00FE05D5 /* LPIMAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FB21EF4213C00FE05D5 /* LPIMAppDelegate.swift */; };
@@ -42,13 +46,6 @@
 		E8736FFB1EF446F400FE05D5 /* LPUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FFA1EF446F400FE05D5 /* LPUtils.swift */; };
 		E8736FFD1EF4485200FE05D5 /* LPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FFC1EF4485200FE05D5 /* LPConfig.swift */; };
 		E87370001EF465FF00FE05D5 /* LPHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8736FFF1EF465FF00FE05D5 /* LPHUD.swift */; };
-		E873701C1EF47D3A00FE05D5 /* UINavigationBar+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E87370131EF47D3A00FE05D5 /* UINavigationBar+Swizzling.m */; };
-		E873701D1EF47D3A00FE05D5 /* UINavigationController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E87370151EF47D3A00FE05D5 /* UINavigationController+Swizzling.m */; };
-		E873701E1EF47D3A00FE05D5 /* UINavigationItem+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E87370171EF47D3A00FE05D5 /* UINavigationItem+Swizzling.m */; };
-		E873701F1EF47D3A00FE05D5 /* UIView+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E87370191EF47D3A00FE05D5 /* UIView+Swizzling.m */; };
-		E87370201EF47D3A00FE05D5 /* UIViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E873701B1EF47D3A00FE05D5 /* UIViewController+Swizzling.m */; };
-		E87370231EF47D8100FE05D5 /* UIView+NTES.m in Sources */ = {isa = PBXBuildFile; fileRef = E87370221EF47D8100FE05D5 /* UIView+NTES.m */; };
-		E87370261EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = E87370251EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.m */; };
 		E89D4E261EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */; };
 		E89D4E281EF58B00004C4207 /* LPFileLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */; };
 		E89D4E2A1EF59145004C4207 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E291EF59145004C4207 /* String+Extension.swift */; };
@@ -65,6 +62,10 @@
 /* Begin PBXFileReference section */
 		0496BC4BB5FCC451A8F4F130 /* Pods_LPIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C929AEECFE2CD54A0A700EC /* Pods-LPIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPIM.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LPIM/Pods-LPIM.debug.xcconfig"; sourceTree = "<group>"; };
+		E807E6571EF7C14200C35E77 /* LPSessionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPSessionListViewController.swift; sourceTree = "<group>"; };
+		E807E6591EF7C16B00C35E77 /* LPContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPContactViewController.swift; sourceTree = "<group>"; };
+		E807E65B1EF7C18C00C35E77 /* LPChatRoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPChatRoomListViewController.swift; sourceTree = "<group>"; };
+		E807E65D1EF7C1A500C35E77 /* LPSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPSettingViewController.swift; sourceTree = "<group>"; };
 		E8736F921EF419E900FE05D5 /* LPIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8736F9C1EF419E900FE05D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8736F9F1EF419E900FE05D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,21 +104,6 @@
 		E8736FFC1EF4485200FE05D5 /* LPConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPConfig.swift; sourceTree = "<group>"; };
 		E8736FFE1EF45FD200FE05D5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E8736FFF1EF465FF00FE05D5 /* LPHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPHUD.swift; sourceTree = "<group>"; };
-		E87370111EF47D3A00FE05D5 /* SwizzlingDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwizzlingDefine.h; sourceTree = "<group>"; };
-		E87370121EF47D3A00FE05D5 /* UINavigationBar+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Swizzling.h"; sourceTree = "<group>"; };
-		E87370131EF47D3A00FE05D5 /* UINavigationBar+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Swizzling.m"; sourceTree = "<group>"; };
-		E87370141EF47D3A00FE05D5 /* UINavigationController+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Swizzling.h"; sourceTree = "<group>"; };
-		E87370151EF47D3A00FE05D5 /* UINavigationController+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Swizzling.m"; sourceTree = "<group>"; };
-		E87370161EF47D3A00FE05D5 /* UINavigationItem+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+Swizzling.h"; sourceTree = "<group>"; };
-		E87370171EF47D3A00FE05D5 /* UINavigationItem+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Swizzling.m"; sourceTree = "<group>"; };
-		E87370181EF47D3A00FE05D5 /* UIView+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Swizzling.h"; sourceTree = "<group>"; };
-		E87370191EF47D3A00FE05D5 /* UIView+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Swizzling.m"; sourceTree = "<group>"; };
-		E873701A1EF47D3A00FE05D5 /* UIViewController+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzling.h"; sourceTree = "<group>"; };
-		E873701B1EF47D3A00FE05D5 /* UIViewController+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzling.m"; sourceTree = "<group>"; };
-		E87370211EF47D8100FE05D5 /* UIView+NTES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NTES.h"; sourceTree = "<group>"; };
-		E87370221EF47D8100FE05D5 /* UIView+NTES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NTES.m"; sourceTree = "<group>"; };
-		E87370241EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+NTESFirstResponder.h"; sourceTree = "<group>"; };
-		E87370251EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+NTESFirstResponder.m"; sourceTree = "<group>"; };
 		E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPIMSDKConfigDelegate.swift; sourceTree = "<group>"; };
 		E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFileLocationHelper.swift; sourceTree = "<group>"; };
 		E89D4E291EF59145004C4207 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -160,6 +146,67 @@
 				FD41DC50491E685DD8BEF3F9 /* Pods-LPIM.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E807E64E1EF7BE4C00C35E77 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		E807E64F1EF7BE4C00C35E77 /* Chatroom */ = {
+			isa = PBXGroup;
+			children = (
+				E807E65B1EF7C18C00C35E77 /* LPChatRoomListViewController.swift */,
+			);
+			path = Chatroom;
+			sourceTree = "<group>";
+		};
+		E807E6501EF7BE4C00C35E77 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				E807E6591EF7C16B00C35E77 /* LPContactViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		E807E6511EF7BE4C00C35E77 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		E807E6521EF7BE4C00C35E77 /* SessionList */ = {
+			isa = PBXGroup;
+			children = (
+				E807E6571EF7C14200C35E77 /* LPSessionListViewController.swift */,
+			);
+			path = SessionList;
+			sourceTree = "<group>";
+		};
+		E807E6531EF7BE4C00C35E77 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E807E65D1EF7C1A500C35E77 /* LPSettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		E807E6541EF7BE4C00C35E77 /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		E807E6561EF7C0C500C35E77 /* LPIM+UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "LPIM+UIKit";
+			path = "../../LPIM+UIKit";
 			sourceTree = "<group>";
 		};
 		E8736F891EF419E900FE05D5 = {
@@ -208,8 +255,16 @@
 				E8736FAF1EF4212200FE05D5 /* LPIM-Bridging-Header.h */,
 				E8736FB21EF4213C00FE05D5 /* LPIMAppDelegate.swift */,
 				E8736FB41EF424AF00FE05D5 /* LPIMAppDelegate+Push.swift */,
+				E807E6561EF7C0C500C35E77 /* LPIM+UIKit */,
 				E8736FBB1EF431D200FE05D5 /* Login */,
 				E8736FD31EF4343700FE05D5 /* Main */,
+				E807E6521EF7BE4C00C35E77 /* SessionList */,
+				E807E6511EF7BE4C00C35E77 /* Session */,
+				E807E64E1EF7BE4C00C35E77 /* Card */,
+				E807E6501EF7BE4C00C35E77 /* Contact */,
+				E807E64F1EF7BE4C00C35E77 /* Chatroom */,
+				E807E6531EF7BE4C00C35E77 /* Setting */,
+				E807E6541EF7BE4C00C35E77 /* Subscribe */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -242,11 +297,6 @@
 		E8736FAE1EF420C900FE05D5 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				E87370241EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.h */,
-				E87370251EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.m */,
-				E87370211EF47D8100FE05D5 /* UIView+NTES.h */,
-				E87370221EF47D8100FE05D5 /* UIView+NTES.m */,
-				E87370101EF47D3A00FE05D5 /* Addons */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -312,24 +362,6 @@
 				E8736FEC1EF444C700FE05D5 /* video_connect_chat_tip_sender.aac */,
 			);
 			path = Sounds;
-			sourceTree = "<group>";
-		};
-		E87370101EF47D3A00FE05D5 /* Addons */ = {
-			isa = PBXGroup;
-			children = (
-				E87370111EF47D3A00FE05D5 /* SwizzlingDefine.h */,
-				E87370121EF47D3A00FE05D5 /* UINavigationBar+Swizzling.h */,
-				E87370131EF47D3A00FE05D5 /* UINavigationBar+Swizzling.m */,
-				E87370141EF47D3A00FE05D5 /* UINavigationController+Swizzling.h */,
-				E87370151EF47D3A00FE05D5 /* UINavigationController+Swizzling.m */,
-				E87370161EF47D3A00FE05D5 /* UINavigationItem+Swizzling.h */,
-				E87370171EF47D3A00FE05D5 /* UINavigationItem+Swizzling.m */,
-				E87370181EF47D3A00FE05D5 /* UIView+Swizzling.h */,
-				E87370191EF47D3A00FE05D5 /* UIView+Swizzling.m */,
-				E873701A1EF47D3A00FE05D5 /* UIViewController+Swizzling.h */,
-				E873701B1EF47D3A00FE05D5 /* UIViewController+Swizzling.m */,
-			);
-			path = Addons;
 			sourceTree = "<group>";
 		};
 		E89D4E311EF5A18A004C4207 /* HTTPSession */ = {
@@ -525,16 +557,15 @@
 				E8736FCA1EF432C200FE05D5 /* LPBaseViewController.swift in Sources */,
 				E8CA1CAF1EF5BDBB00A9B898 /* UIViewController+Alert.swift in Sources */,
 				E8736FD51EF4349400FE05D5 /* LPMainTabBarController.swift in Sources */,
-				E873701C1EF47D3A00FE05D5 /* UINavigationBar+Swizzling.m in Sources */,
 				E89D4E3B1EF5A3BB004C4207 /* LPServiceManager.swift in Sources */,
+				E807E65E1EF7C1A500C35E77 /* LPSettingViewController.swift in Sources */,
 				E8736FFB1EF446F400FE05D5 /* LPUtils.swift in Sources */,
 				E8736FC01EF4324300FE05D5 /* LPLoginViewController.swift in Sources */,
-				E873701E1EF47D3A00FE05D5 /* UINavigationItem+Swizzling.m in Sources */,
 				E89D4E411EF5BA94004C4207 /* NIMLoginClientType+Name.swift in Sources */,
 				E8736FD21EF4332D00FE05D5 /* LPBaseView.swift in Sources */,
-				E873701D1EF47D3A00FE05D5 /* UINavigationController+Swizzling.m in Sources */,
 				E8736FD81EF4399E00FE05D5 /* LPIBDesignableView.swift in Sources */,
 				E8736FF91EF446D500FE05D5 /* LPKit.swift in Sources */,
+				E807E65A1EF7C16B00C35E77 /* LPContactViewController.swift in Sources */,
 				E8736FBD1EF4320500FE05D5 /* LPLoginManager.swift in Sources */,
 				E89D4E371EF5A19F004C4207 /* LPHTTPSession.swift in Sources */,
 				E8736FFD1EF4485200FE05D5 /* LPConfig.swift in Sources */,
@@ -545,15 +576,13 @@
 				E8736FCC1EF432D100FE05D5 /* LPBaseTableViewController.swift in Sources */,
 				E89D4E3D1EF5A3EE004C4207 /* LPSessionUtil.swift in Sources */,
 				E8CA1CAD1EF5BDAE00A9B898 /* UIViewController+FormSheet.swift in Sources */,
-				E87370201EF47D3A00FE05D5 /* UIViewController+Swizzling.m in Sources */,
 				E8736FB31EF4213C00FE05D5 /* LPIMAppDelegate.swift in Sources */,
-				E87370261EF47E2800FE05D5 /* UIResponder+NTESFirstResponder.m in Sources */,
+				E807E65C1EF7C18C00C35E77 /* LPChatRoomListViewController.swift in Sources */,
 				E87370001EF465FF00FE05D5 /* LPHUD.swift in Sources */,
 				E89D4E361EF5A19F004C4207 /* LPRegisterTask.swift in Sources */,
-				E87370231EF47D8100FE05D5 /* UIView+NTES.m in Sources */,
+				E807E6581EF7C14200C35E77 /* LPSessionListViewController.swift in Sources */,
 				E89D4E2A1EF59145004C4207 /* String+Extension.swift in Sources */,
 				E89D4E351EF5A19F004C4207 /* LPFetchChatroomTask.swift in Sources */,
-				E873701F1EF47D3A00FE05D5 /* UIView+Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
