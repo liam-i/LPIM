@@ -13,5 +13,6 @@ target 'LPIM' do
   pod 'IQKeyboardManagerSwift', '~> 4.0.10'
   pod 'LPProgressHUD', '~> 1.0.1'
   pod 'SnapKit', '~> 3.2.0'
+  pod 'Kingfisher', '~> 3.10.2'
   
 end

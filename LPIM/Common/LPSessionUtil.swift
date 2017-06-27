@@ -9,11 +9,13 @@
 import Foundation
 import NIMSDK
 
+//double OnedayTimeIntervalValue = 24*60*60;  //一天的秒数
+
+private let kLPRecentSessionAtMark = "kLPRecentSessionAtMark"
+
 //+ (CGSize)getImageSizeWithImageOriginSize:(CGSize)originSize
 //                                  minSize:(CGSize)imageMinSize
 //                                  maxSize:(CGSize)imageMaxSize;
-//
-//+ (NSString *)showNick:(NSString*)uid inSession:(NIMSession*)session;
 //
 ////接收时间格式化
 //+ (NSString*)showTime:(NSTimeInterval) msglastTime showDetail:(BOOL)showDetail;
@@ -36,16 +38,10 @@ import NIMSDK
 //+ (void)addRecentSessionAtMark:(NIMSession *)session;
 //
 //+ (void)removeRecentSessionAtMark:(NIMSession *)session;
-//
-//+ (BOOL)recentSessionIsAtMark:(NIMRecentSession *)recent;
-//
-//+ (NSString *)onlineState:(NSString *)userId detail:(BOOL)detail;
-//
-
 
 class LPSessionUtil {
     
-    static func formatAutoLoginMessage(error: NSError) -> String {
+    class func formatAutoLoginMessage(error: NSError) -> String {
         var msg = "自动登录失败 \(error)"
         let domain = error.domain
         let code = error.code
@@ -62,13 +58,78 @@ class LPSessionUtil {
         }
         return msg
     }
+    
+    class func onlineState(_ userId: String, detail: Bool) -> String {
+        //    NSString *state = @"";
+        var state = ""
+        
+        //    if (![NTESSubscribeManager sharedManager])
+        //    {
+        //        //没有开启订阅服务
+        //        return state;
+        //    }
+        
+        
+        //
+        //    NSDictionary *dict = [[NTESSubscribeManager sharedManager] eventsForType:NIMSubscribeSystemEventTypeOnline];
+        //    NIMSubscribeEvent *event = [dict objectForKey:userId];
+        //    NIMSubscribeOnlineInfo *info = event.subscribeInfo;
+        //    if ([info isKindOfClass:[NIMSubscribeOnlineInfo class]] && info.senderClientTypes.count)
+        //    {
+        //        NIMLoginClientType client = [self resolveShowClientType:info.senderClientTypes];
+        //
+        //        switch (event.value) {
+        //            case NTESCustomStateValueOnlineExt:
+        //            case NIMSubscribeEventOnlineValueLogin:
+        //            case NIMSubscribeEventOnlineValueLogout:
+        //            case NIMSubscribeEventOnlineValueDisconnected:
+        //            {
+        //                NSString *ext = [event ext:client];
+        //                state = [self resolveOnlineState:ext client:client detail:detail];
+        //            }
+        //                break;
+        //
+        //            default:
+        //            {
+        //                NSString *clientName = [self resolveOnlineClientName:client];
+        //                state = [NSString stringWithFormat:@"%@在线",clientName];
+        //                break;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        state = [userId isEqualToString:[NIMSDK sharedSDK].loginManager.currentAccount]? @"" : @"离线";
+        //    }
+        
+        return state
+    }
+    
+    class func recentSessionIsAtMark(_ recent: NIMRecentSession) -> Bool {
+        if let localExt = recent.localExt, let obj = localExt[kLPRecentSessionAtMark] {
+            return (obj as AnyObject).boolValue
+        }
+        return false
+    }
+    
+    class func showNick(_ uid: String, session: NIMSession?) -> String? {
+        var nickname: String? = nil
+        if let session = session, session.sessionType == .team {
+            let member = NIMSDK.shared().teamManager.teamMember(uid, inTeam: session.sessionId)
+            nickname = member?.nickname
+        }
+        
+        if let nickname = nickname, nickname.characters.count > 0 {
+            return nickname
+        }
+        
+        let info = LPKKit.shared.info(byUser: uid, option: nil)
+        return info?.showName
+    }
 }
 
 
 
-//double OnedayTimeIntervalValue = 24*60*60;  //一天的秒数
-//
-//static NSString *const NTESRecentSessionAtMark = @"NTESRecentSessionAtMark";
 //
 //@implementation NTESSessionUtil
 //
@@ -149,20 +210,7 @@ class LPSessionUtil {
 //}
 //
 //
-//+ (NSString *)showNick:(NSString*)uid inSession:(NIMSession*)session{
-//
-//    NSString *nickname = nil;
-//    if (session.sessionType == NIMSessionTypeTeam)
-//    {
-//        NIMTeamMember *member = [[NIMSDK sharedSDK].teamManager teamMember:uid inTeam:session.sessionId];
-//        nickname = member.nickname;
-//    }
-//    if (!nickname.length) {
-//        NIMKitInfo *info = [[NIMKit sharedKit] infoByUser:uid option:nil];
-//        nickname = info.showName;
-//    }
-//    return nickname;
-//}
+
 //
 //
 //+(NSString*)showTime:(NSTimeInterval) msglastTime showDetail:(BOOL)showDetail
@@ -365,7 +413,7 @@ class LPSessionUtil {
 //    {
 //        NSDictionary *localExt = recent.localExt?:@{};
 //        NSMutableDictionary *dict = [localExt mutableCopy];
-//        [dict setObject:@(YES) forKey:NTESRecentSessionAtMark];
+//        [dict setObject:@(YES) forKey:kLPRecentSessionAtMark];
 //        [[NIMSDK sharedSDK].conversationManager updateRecentLocalExt:dict recentSession:recent];
 //    }
 //
@@ -377,61 +425,10 @@ class LPSessionUtil {
 //    NIMRecentSession *recent = [[NIMSDK sharedSDK].conversationManager recentSessionBySession:session];
 //    if (recent) {
 //        NSMutableDictionary *localExt = [recent.localExt mutableCopy];
-//        [localExt removeObjectForKey:NTESRecentSessionAtMark];
+//        [localExt removeObjectForKey:kLPRecentSessionAtMark];
 //        [[NIMSDK sharedSDK].conversationManager updateRecentLocalExt:localExt recentSession:recent];
 //    }
 //}
-//
-//+ (BOOL)recentSessionIsAtMark:(NIMRecentSession *)recent
-//{
-//    NSDictionary *localExt = recent.localExt;
-//    return [localExt[NTESRecentSessionAtMark] boolValue] == YES;
-//}
-//
-//
-//
-//+ (NSString *)onlineState:(NSString *)userId detail:(BOOL)detail
-//{
-//    NSString *state = @"";
-//    if (![NTESSubscribeManager sharedManager])
-//    {
-//        //没有开启订阅服务
-//        return state;
-//    }
-//
-//    NSDictionary *dict = [[NTESSubscribeManager sharedManager] eventsForType:NIMSubscribeSystemEventTypeOnline];
-//    NIMSubscribeEvent *event = [dict objectForKey:userId];
-//    NIMSubscribeOnlineInfo *info = event.subscribeInfo;
-//    if ([info isKindOfClass:[NIMSubscribeOnlineInfo class]] && info.senderClientTypes.count)
-//    {
-//        NIMLoginClientType client = [self resolveShowClientType:info.senderClientTypes];
-//
-//        switch (event.value) {
-//            case NTESCustomStateValueOnlineExt:
-//            case NIMSubscribeEventOnlineValueLogin:
-//            case NIMSubscribeEventOnlineValueLogout:
-//            case NIMSubscribeEventOnlineValueDisconnected:
-//            {
-//                NSString *ext = [event ext:client];
-//                state = [self resolveOnlineState:ext client:client detail:detail];
-//            }
-//                break;
-//
-//            default:
-//            {
-//                NSString *clientName = [self resolveOnlineClientName:client];
-//                state = [NSString stringWithFormat:@"%@在线",clientName];
-//                break;
-//            }
-//        }
-//    }
-//    else
-//    {
-//        state = [userId isEqualToString:[NIMSDK sharedSDK].loginManager.currentAccount]? @"" : @"离线";
-//    }
-//    return state;
-//}
-//
 //
 //+ (NIMLoginClientType)resolveShowClientType:(NSArray *)senderClientTypes
 //{

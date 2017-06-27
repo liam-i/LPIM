@@ -11,7 +11,6 @@ import Foundation
 public let kLogoutNotification = Notification.Name("kLogoutNotification")
 public let kCustomNotificationCountChanged = Notification.Name("kCustomNotificationCountChanged")
 
-
 /// HUD延迟时间
 public let kDuration_Of_HUD: Foundation.TimeInterval = 1.6 // Progress HUD 延迟时间
 public let kDuration_Of_Animation: Foundation.TimeInterval = 0.25 // 动画的持续时间

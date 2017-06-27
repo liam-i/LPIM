@@ -59,7 +59,7 @@ class LPMainTabBarController: UITabBarController {
 //    self.customSystemUnreadCount = [[NTESCustomNotificationDB sharedInstance] unreadCount];
         
         let tabbars: [(vc: UIViewController, title: String, image_n: UIImage, image_s: UIImage, badgeValue: Int)] = [
-            (LPSessionListViewController(), "微聊", #imageLiteral(resourceName: "icon_message_normal"), #imageLiteral(resourceName: "icon_message_pressed"), sessionUnreadCount),
+            (LPSessionListViewController(), "LPIM", #imageLiteral(resourceName: "icon_message_normal"), #imageLiteral(resourceName: "icon_message_pressed"), sessionUnreadCount),
             (LPContactViewController(), "通讯录", #imageLiteral(resourceName: "icon_contact_normal"), #imageLiteral(resourceName: "icon_contact_pressed"), systemUnreadCount),
             (LPContactViewController(), "直播间", #imageLiteral(resourceName: "icon_chatroom_normal"), #imageLiteral(resourceName: "icon_chatroom_pressed"), 0),
             (LPSettingViewController(), "设置", #imageLiteral(resourceName: "icon_setting_normal"), #imageLiteral(resourceName: "icon_setting_pressed"), customSystemUnreadCount),

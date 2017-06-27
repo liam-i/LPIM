@@ -9,6 +9,7 @@
 import UIKit
 import XCGLogger
 
+
 /// 日志调试器
 let log: XCGLogger = {
     let log = XCGLogger.default
@@ -29,6 +30,7 @@ let log: XCGLogger = {
     log.formatters = [format]
     return log
 }()
+
 
 class YLUtils {
     
