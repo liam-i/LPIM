@@ -16,7 +16,7 @@ import Foundation
     ///   - userId: 用户ID
     ///   - option: 获取选项
     /// - Returns: 用户信息
-    @objc optional func info(byUser userId: String, option: LPKInfoFetchOption?) -> LPKInfo?
+    @objc optional func info(byUser userId: String, option: LPKInfoFetchOption?) -> LPKInfo
     
     /// 上层提供群组信息的接口
     ///

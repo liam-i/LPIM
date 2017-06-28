@@ -46,6 +46,7 @@ class LPKDataProviderImpl: NSObject {
 }
 
 extension LPKDataProviderImpl: LPKDataProviderDelegate {
+    
     func info(byTeam teamId: String, option: LPKInfoFetchOption?) -> LPKInfo? {
         guard let team = NIMSDK.shared().teamManager.team(byId: teamId) else { return nil }
         
@@ -57,7 +58,7 @@ extension LPKDataProviderImpl: LPKDataProviderDelegate {
         return info
     }
     
-    func info(byUser userId: String, option: LPKInfoFetchOption?) -> LPKInfo? {
+    func info(byUser userId: String, option: LPKInfoFetchOption?) -> LPKInfo {
         if let message = option?.message {
             assert(userId == message.from, "user id should be same with message from")
             return info(byUser: userId, message: message, option: option)
@@ -65,32 +66,37 @@ extension LPKDataProviderImpl: LPKDataProviderDelegate {
         return info(byUser: userId, session: option?.session, option: option)
     }
     
-    func info(byUser userId: String, session: NIMSession?, option: LPKInfoFetchOption?) -> LPKInfo? {
-        guard let session = session else { return nil }
-        
+    func info(byUser userId: String, session: NIMSession?, option: LPKInfoFetchOption?) -> LPKInfo {
         var needFetchInfo = false
-        let sessionType = session.sessionType
+        
         let info = LPKInfo()
         info.infoId = userId
         info.showName = userId //默认值
-        switch sessionType {
-        case .P2P, .team:
-            guard let user = NIMSDK.shared().userManager.userInfo(userId) else { return nil }
-            let uinfo = user.userInfo
-            
-            var member: NIMTeamMember? = nil
-            if sessionType == .team {
-                member = NIMSDK.shared().teamManager.teamMember(userId, inTeam: session.sessionId)
+        info.avatarImage = defaultUserAvatar
+        
+        if let session = session {
+            let sessionType = session.sessionType
+            switch sessionType {
+            case .P2P, .team:
+                if let user = NIMSDK.shared().userManager.userInfo(userId) {
+                    let uinfo = user.userInfo
+                    
+                    var member: NIMTeamMember? = nil
+                    if sessionType == .team {
+                        member = NIMSDK.shared().teamManager.teamMember(userId, inTeam: session.sessionId)
+                    }
+                    
+                    info.showName = nickname(user: user, memberInfo: member, option: option)
+                    info.avatarUrlString = uinfo?.thumbAvatarUrl
+                    info.avatarImage = defaultUserAvatar
+                    
+                    if uinfo == nil {
+                        needFetchInfo = true
+                    }
+                }
+            case .chatroom:
+                assert(false, "invalid type") // 聊天室的Info不会通过这个回调请求
             }
-            
-            info.showName = nickname(user: user, memberInfo: member, option: option)
-            info.avatarUrlString = uinfo?.thumbAvatarUrl
-            info.avatarImage = defaultUserAvatar
-            if uinfo == nil {
-                needFetchInfo = true
-            }
-        case .chatroom:
-            assert(false, "invalid type") // 聊天室的Info不会通过这个回调请求
         }
         
         if needFetchInfo {
@@ -99,7 +105,7 @@ extension LPKDataProviderImpl: LPKDataProviderDelegate {
         return info
     }
     
-    func info(byUser userId: String, message: NIMMessage, option: LPKInfoFetchOption?) -> LPKInfo? {
+    func info(byUser userId: String, message: NIMMessage, option: LPKInfoFetchOption?) -> LPKInfo {
         if let session = message.session, session.sessionType == .chatroom {
             let info = LPKInfo()
             info.infoId = userId

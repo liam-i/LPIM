@@ -12,7 +12,7 @@ import LPProgressHUD
 class LPHUD {
     static var lastHUD: LPProgressHUD? = nil
     
-    class func showText(at view: UIView?, text: String) {
+    class func showText(at view: UIView?, text: String, center: Bool = false) {
         if let lastHUD = lastHUD {
             lastHUD.hide(animated: false)
         }
@@ -22,7 +22,9 @@ class LPHUD {
         HUD.mode = LPProgressHUDMode.text
         HUD.detailsLabel.text = text
         HUD.margin = 10.0
-        HUD.offset = CGPoint(x: 0.0, y: LPProgressMaxOffset)
+        if !center {
+            HUD.offset = CGPoint(x: 0.0, y: LPProgressMaxOffset)
+        }
         HUD.removeFromSuperViewOnHide = true
         inView.addSubview(HUD)
         HUD.show(animated: true)

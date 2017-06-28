@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import NIMSDK
 
 class LPKSessionViewController: UIViewController {
 
+    convenience init(session: NIMSession) {
+        self.init(nibName: nil, bundle: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

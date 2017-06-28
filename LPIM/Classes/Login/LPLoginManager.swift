@@ -8,8 +8,6 @@
 
 import Foundation
 
-//#import "NTESFileLocationHelper.h"
-
 class LPLoginData: NSObject, NSCoding {
     var account: String?
     var token: String?

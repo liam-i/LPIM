@@ -34,7 +34,7 @@ class LPKSessionListCell: UITableViewCell {
         return lbl
     }()
     var badgeView: LPKBadgeView = {
-        return LPKBadgeView.view(withBadgeTip: "")
+        return LPKBadgeView.view(withBadgeTip: nil)
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -52,12 +52,7 @@ class LPKSessionListCell: UITableViewCell {
         let MessageLabelMaxWidth: CGFloat = 200.0
         nameLabel.lp_width = nameLabel.lp_width > NameLabelMaxWidth ? NameLabelMaxWidth : nameLabel.lp_width
         messageLabel.lp_width = messageLabel.lp_width > MessageLabelMaxWidth ? MessageLabelMaxWidth : messageLabel.lp_width
-        if recent.unreadCount > 0 {
-            badgeView.isHidden = false
-            badgeView.badgeValue = "\(recent.unreadCount)"
-        } else {
-            badgeView.isHidden = true
-        }
+        badgeView.badgeValue = "\(recent.unreadCount)"
     }
     
     override func layoutSubviews() {

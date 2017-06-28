@@ -71,6 +71,11 @@
 		E88C14681F0205F3005A4AA4 /* LPJanKenPonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C14671F0205F3005A4AA4 /* LPJanKenPonAttachment.swift */; };
 		E88C146A1F020604005A4AA4 /* LPChartletAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C14691F020604005A4AA4 /* LPChartletAttachment.swift */; };
 		E88C146C1F020614005A4AA4 /* LPWhiteboardAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C146B1F020614005A4AA4 /* LPWhiteboardAttachment.swift */; };
+		E88C14751F022741005A4AA4 /* LPGroupedContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C14741F022741005A4AA4 /* LPGroupedContacts.swift */; };
+		E88C14771F022751005A4AA4 /* LPGroupedDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C14761F022751005A4AA4 /* LPGroupedDataCollection.swift */; };
+		E88C14791F022789005A4AA4 /* LPContactDataMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C14781F022789005A4AA4 /* LPContactDataMember.swift */; };
+		E88C147C1F022D8F005A4AA4 /* LPPinyinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C147B1F022D8F005A4AA4 /* LPPinyinConverter.swift */; };
+		E88C147E1F022DB4005A4AA4 /* LPSpellingCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C147D1F022DB4005A4AA4 /* LPSpellingCenter.swift */; };
 		E89D4E261EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */; };
 		E89D4E281EF58B00004C4207 /* LPFileLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */; };
 		E89D4E2A1EF59145004C4207 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4E291EF59145004C4207 /* String+Extension.swift */; };
@@ -86,6 +91,20 @@
 		E8DB2D651F00F4CF00B755FA /* LPListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB2D641F00F4CF00B755FA /* LPListHeader.swift */; };
 		E8DB2D671F00F60400B755FA /* LPBundleSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB2D661F00F60400B755FA /* LPBundleSetting.swift */; };
 		E8DB2D691F01173100B755FA /* LPSessionPeekNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB2D681F01173100B755FA /* LPSessionPeekNavigationController.swift */; };
+		E8DE6C071F0355F20074D7FD /* LPContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8DE6C061F0355F20074D7FD /* LPContact.storyboard */; };
+		E8DE6C091F0359FF0074D7FD /* LPContactUtilMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C081F0359FF0074D7FD /* LPContactUtilMember.swift */; };
+		E8DE6C0B1F035AAE0074D7FD /* LPContactDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C0A1F035AAE0074D7FD /* LPContactDefines.swift */; };
+		E8DE6C0E1F035DA30074D7FD /* LPContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C0C1F035DA30074D7FD /* LPContactCell.swift */; };
+		E8DE6C131F03617A0074D7FD /* LPContactUtilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C111F03617A0074D7FD /* LPContactUtilCell.swift */; };
+		E8DE6C161F03A14C0074D7FD /* LPSystemNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C151F03A14C0074D7FD /* LPSystemNotificationViewController.swift */; };
+		E8DE6C181F03A1AB0074D7FD /* LPTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C171F03A1AB0074D7FD /* LPTeamListViewController.swift */; };
+		E8DE6C1A1F03A1D40074D7FD /* LPAdvancedTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C191F03A1D40074D7FD /* LPAdvancedTeamListViewController.swift */; };
+		E8DE6C1C1F03A1E50074D7FD /* LPNormalTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C1B1F03A1E50074D7FD /* LPNormalTeamListViewController.swift */; };
+		E8DE6C1E1F03A20A0074D7FD /* LPBlackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C1D1F03A20A0074D7FD /* LPBlackListViewController.swift */; };
+		E8DE6C201F03A4210074D7FD /* LPPersonalCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C1F1F03A4210074D7FD /* LPPersonalCardViewController.swift */; };
+		E8DE6C221F03B95A0074D7FD /* LPSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C211F03B95A0074D7FD /* LPSessionViewController.swift */; };
+		E8DE6C241F03BCBC0074D7FD /* LPKContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C231F03BCBC0074D7FD /* LPKContactCell.swift */; };
+		E8DE6C261F03BD070074D7FD /* LPKContactSelectConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE6C251F03BD070074D7FD /* LPKContactSelectConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +177,11 @@
 		E88C14671F0205F3005A4AA4 /* LPJanKenPonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPJanKenPonAttachment.swift; sourceTree = "<group>"; };
 		E88C14691F020604005A4AA4 /* LPChartletAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPChartletAttachment.swift; sourceTree = "<group>"; };
 		E88C146B1F020614005A4AA4 /* LPWhiteboardAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPWhiteboardAttachment.swift; sourceTree = "<group>"; };
+		E88C14741F022741005A4AA4 /* LPGroupedContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPGroupedContacts.swift; sourceTree = "<group>"; };
+		E88C14761F022751005A4AA4 /* LPGroupedDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPGroupedDataCollection.swift; sourceTree = "<group>"; };
+		E88C14781F022789005A4AA4 /* LPContactDataMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPContactDataMember.swift; sourceTree = "<group>"; };
+		E88C147B1F022D8F005A4AA4 /* LPPinyinConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPPinyinConverter.swift; sourceTree = "<group>"; };
+		E88C147D1F022DB4005A4AA4 /* LPSpellingCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPSpellingCenter.swift; sourceTree = "<group>"; };
 		E89D4E251EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPIMSDKConfigDelegate.swift; sourceTree = "<group>"; };
 		E89D4E271EF58B00004C4207 /* LPFileLocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFileLocationHelper.swift; sourceTree = "<group>"; };
 		E89D4E291EF59145004C4207 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -174,6 +198,20 @@
 		E8DB2D641F00F4CF00B755FA /* LPListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPListHeader.swift; sourceTree = "<group>"; };
 		E8DB2D661F00F60400B755FA /* LPBundleSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPBundleSetting.swift; sourceTree = "<group>"; };
 		E8DB2D681F01173100B755FA /* LPSessionPeekNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPSessionPeekNavigationController.swift; sourceTree = "<group>"; };
+		E8DE6C061F0355F20074D7FD /* LPContact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LPContact.storyboard; sourceTree = "<group>"; };
+		E8DE6C081F0359FF0074D7FD /* LPContactUtilMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPContactUtilMember.swift; sourceTree = "<group>"; };
+		E8DE6C0A1F035AAE0074D7FD /* LPContactDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPContactDefines.swift; sourceTree = "<group>"; };
+		E8DE6C0C1F035DA30074D7FD /* LPContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPContactCell.swift; sourceTree = "<group>"; };
+		E8DE6C111F03617A0074D7FD /* LPContactUtilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPContactUtilCell.swift; sourceTree = "<group>"; };
+		E8DE6C151F03A14C0074D7FD /* LPSystemNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPSystemNotificationViewController.swift; sourceTree = "<group>"; };
+		E8DE6C171F03A1AB0074D7FD /* LPTeamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPTeamListViewController.swift; sourceTree = "<group>"; };
+		E8DE6C191F03A1D40074D7FD /* LPAdvancedTeamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPAdvancedTeamListViewController.swift; sourceTree = "<group>"; };
+		E8DE6C1B1F03A1E50074D7FD /* LPNormalTeamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPNormalTeamListViewController.swift; sourceTree = "<group>"; };
+		E8DE6C1D1F03A20A0074D7FD /* LPBlackListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPBlackListViewController.swift; sourceTree = "<group>"; };
+		E8DE6C1F1F03A4210074D7FD /* LPPersonalCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPPersonalCardViewController.swift; sourceTree = "<group>"; };
+		E8DE6C211F03B95A0074D7FD /* LPSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPSessionViewController.swift; sourceTree = "<group>"; };
+		E8DE6C231F03BCBC0074D7FD /* LPKContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPKContactCell.swift; sourceTree = "<group>"; };
+		E8DE6C251F03BD070074D7FD /* LPKContactSelectConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPKContactSelectConfig.swift; sourceTree = "<group>"; };
 		FD41DC50491E685DD8BEF3F9 /* Pods-LPIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPIM.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LPIM/Pods-LPIM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,9 +244,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E807D6431F0240BC00255142 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E88C14741F022741005A4AA4 /* LPGroupedContacts.swift */,
+				E88C14761F022751005A4AA4 /* LPGroupedDataCollection.swift */,
+				E8DE6C0A1F035AAE0074D7FD /* LPContactDefines.swift */,
+				E88C14781F022789005A4AA4 /* LPContactDataMember.swift */,
+				E8DE6C081F0359FF0074D7FD /* LPContactUtilMember.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		E807E64E1EF7BE4C00C35E77 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				E8DE6C171F03A1AB0074D7FD /* LPTeamListViewController.swift */,
+				E8DE6C191F03A1D40074D7FD /* LPAdvancedTeamListViewController.swift */,
+				E8DE6C1B1F03A1E50074D7FD /* LPNormalTeamListViewController.swift */,
+				E8DE6C1F1F03A4210074D7FD /* LPPersonalCardViewController.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -224,7 +278,12 @@
 		E807E6501EF7BE4C00C35E77 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				E8DE6C061F0355F20074D7FD /* LPContact.storyboard */,
 				E807E6591EF7C16B00C35E77 /* LPContactViewController.swift */,
+				E8DE6C151F03A14C0074D7FD /* LPSystemNotificationViewController.swift */,
+				E8DE6C1D1F03A20A0074D7FD /* LPBlackListViewController.swift */,
+				E8DE6C101F035DA80074D7FD /* View */,
+				E807D6431F0240BC00255142 /* Model */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -233,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				E8DB2D681F01173100B755FA /* LPSessionPeekNavigationController.swift */,
+				E8DE6C211F03B95A0074D7FD /* LPSessionViewController.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -294,6 +354,8 @@
 		E807E6601EF7D5A000C35E77 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				E8DE6C231F03BCBC0074D7FD /* LPKContactCell.swift */,
+				E8DE6C251F03BD070074D7FD /* LPKContactSelectConfig.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -429,6 +491,7 @@
 				E8736FFA1EF446F400FE05D5 /* LPUtils.swift */,
 				E8736FFC1EF4485200FE05D5 /* LPConfig.swift */,
 				E8DB2D661F00F60400B755FA /* LPBundleSetting.swift */,
+				E88C147A1F0229EF005A4AA4 /* Spelling */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -523,6 +586,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E88C147A1F0229EF005A4AA4 /* Spelling */ = {
+			isa = PBXGroup;
+			children = (
+				E88C147B1F022D8F005A4AA4 /* LPPinyinConverter.swift */,
+				E88C147D1F022DB4005A4AA4 /* LPSpellingCenter.swift */,
+			);
+			path = Spelling;
+			sourceTree = "<group>";
+		};
 		E89D4E311EF5A18A004C4207 /* HTTPSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +623,15 @@
 				E8736FFF1EF465FF00FE05D5 /* LPHUD.swift */,
 			);
 			name = Control;
+			sourceTree = "<group>";
+		};
+		E8DE6C101F035DA80074D7FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8DE6C111F03617A0074D7FD /* LPContactUtilCell.swift */,
+				E8DE6C0C1F035DA30074D7FD /* LPContactCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -632,6 +713,7 @@
 				E8736FE11EF444B300FE05D5 /* NIMKitResource.bundle in Resources */,
 				E8736FDC1EF4448C00FE05D5 /* icon_meeting_connecting@2x.gif in Resources */,
 				E8736FA01EF419E900FE05D5 /* LaunchScreen.storyboard in Resources */,
+				E8DE6C071F0355F20074D7FD /* LPContact.storyboard in Resources */,
 				E8736FF01EF444C700FE05D5 /* video_chat_tip_HangUp.aac in Resources */,
 				E8736FF11EF444C700FE05D5 /* video_chat_tip_OnCall.aac in Resources */,
 				E8736F9D1EF419E900FE05D5 /* Assets.xcassets in Resources */,
@@ -713,6 +795,9 @@
 			files = (
 				E8736FB51EF424AF00FE05D5 /* LPIMAppDelegate+Push.swift in Sources */,
 				E8736FC61EF4329D00FE05D5 /* LPRegisterViewController.swift in Sources */,
+				E8DE6C241F03BCBC0074D7FD /* LPKContactCell.swift in Sources */,
+				E8DE6C161F03A14C0074D7FD /* LPSystemNotificationViewController.swift in Sources */,
+				E8DE6C1C1F03A1E50074D7FD /* LPNormalTeamListViewController.swift in Sources */,
 				E8736FCA1EF432C200FE05D5 /* LPBaseViewController.swift in Sources */,
 				E88C14681F0205F3005A4AA4 /* LPJanKenPonAttachment.swift in Sources */,
 				E81F026E1EFD5BCB007F35BC /* LPKNotificationFirer.swift in Sources */,
@@ -726,15 +811,22 @@
 				E888D5541EFCF7E4004323A5 /* LPKDevice.swift in Sources */,
 				E8DB2D671F00F60400B755FA /* LPBundleSetting.swift in Sources */,
 				E89D4E3B1EF5A3BB004C4207 /* LPServiceManager.swift in Sources */,
+				E8DE6C0B1F035AAE0074D7FD /* LPContactDefines.swift in Sources */,
 				E807E65E1EF7C1A500C35E77 /* LPSettingViewController.swift in Sources */,
+				E8DE6C221F03B95A0074D7FD /* LPSessionViewController.swift in Sources */,
 				E8736FFB1EF446F400FE05D5 /* LPUtils.swift in Sources */,
+				E8DE6C201F03A4210074D7FD /* LPPersonalCardViewController.swift in Sources */,
 				E88C146C1F020614005A4AA4 /* LPWhiteboardAttachment.swift in Sources */,
 				E8736FC01EF4324300FE05D5 /* LPLoginViewController.swift in Sources */,
 				E81F02771EFD6C80007F35BC /* LPKCellLayoutConfig.swift in Sources */,
+				E88C14791F022789005A4AA4 /* LPContactDataMember.swift in Sources */,
 				E89D4E411EF5BA94004C4207 /* NIMLoginClientType+Name.swift in Sources */,
 				E81F027D1EFD7418007F35BC /* LPKMediaItem.swift in Sources */,
+				E88C14771F022751005A4AA4 /* LPGroupedDataCollection.swift in Sources */,
 				E84207151EF925D100DC2B4E /* UIView+LPK.swift in Sources */,
+				E8DE6C0E1F035DA30074D7FD /* LPContactCell.swift in Sources */,
 				E8736FD21EF4332D00FE05D5 /* LPBaseView.swift in Sources */,
+				E8DE6C1A1F03A1D40074D7FD /* LPAdvancedTeamListViewController.swift in Sources */,
 				E8736FD81EF4399E00FE05D5 /* LPIBDesignableView.swift in Sources */,
 				E807E65A1EF7C16B00C35E77 /* LPContactViewController.swift in Sources */,
 				E8736FBD1EF4320500FE05D5 /* LPLoginManager.swift in Sources */,
@@ -745,6 +837,8 @@
 				E89D4E371EF5A19F004C4207 /* LPHTTPSession.swift in Sources */,
 				E8736FFD1EF4485200FE05D5 /* LPConfig.swift in Sources */,
 				E89D4E281EF58B00004C4207 /* LPFileLocationHelper.swift in Sources */,
+				E88C14751F022741005A4AA4 /* LPGroupedContacts.swift in Sources */,
+				E8DE6C1E1F03A20A0074D7FD /* LPBlackListViewController.swift in Sources */,
 				E88C14661F0205CF005A4AA4 /* LPSnapchatAttachment.swift in Sources */,
 				E89D4E261EF58AF1004C4207 /* LPIMSDKConfigDelegate.swift in Sources */,
 				E8DB2D651F00F4CF00B755FA /* LPListHeader.swift in Sources */,
@@ -753,9 +847,12 @@
 				E84207131EF91A8300DC2B4E /* LPKBadgeView.swift in Sources */,
 				E888D54D1EFCBEAF004323A5 /* LPKInfoFetchOption.swift in Sources */,
 				E81F02791EFD6CC7007F35BC /* LPKMessageModel.swift in Sources */,
+				E8DE6C091F0359FF0074D7FD /* LPContactUtilMember.swift in Sources */,
 				E8DB2D631F00AC1100B755FA /* String+LPK.swift in Sources */,
 				E888D5501EFCC411004323A5 /* LPKDataProviderImpl.swift in Sources */,
 				E8736FCE1EF432E000FE05D5 /* LPBaseCollectionViewController.swift in Sources */,
+				E88C147E1F022DB4005A4AA4 /* LPSpellingCenter.swift in Sources */,
+				E8DE6C131F03617A0074D7FD /* LPContactUtilCell.swift in Sources */,
 				E8736FD01EF432FE00FE05D5 /* LPBaseNavigationController.swift in Sources */,
 				E8736FCC1EF432D100FE05D5 /* LPBaseTableViewController.swift in Sources */,
 				E89D4E3D1EF5A3EE004C4207 /* LPSessionUtil.swift in Sources */,
@@ -764,11 +861,14 @@
 				E807E65C1EF7C18C00C35E77 /* LPChatRoomListViewController.swift in Sources */,
 				E888D5491EFCBD37004323A5 /* LPKit.swift in Sources */,
 				E81F02751EFD6AF4007F35BC /* LPKCellLayoutConfigDelegate.swift in Sources */,
+				E8DE6C181F03A1AB0074D7FD /* LPTeamListViewController.swift in Sources */,
 				E87370001EF465FF00FE05D5 /* LPHUD.swift in Sources */,
 				E89D4E361EF5A19F004C4207 /* LPRegisterTask.swift in Sources */,
 				E81F027F1EFD75A4007F35BC /* LPKSessionViewController.swift in Sources */,
+				E8DE6C261F03BD070074D7FD /* LPKContactSelectConfig.swift in Sources */,
 				E842070B1EF8FC5F00DC2B4E /* LPKKit.swift in Sources */,
 				E807E6581EF7C14200C35E77 /* LPSessionListViewController.swift in Sources */,
+				E88C147C1F022D8F005A4AA4 /* LPPinyinConverter.swift in Sources */,
 				E89D4E2A1EF59145004C4207 /* String+Extension.swift in Sources */,
 				E89D4E351EF5A19F004C4207 /* LPFetchChatroomTask.swift in Sources */,
 			);

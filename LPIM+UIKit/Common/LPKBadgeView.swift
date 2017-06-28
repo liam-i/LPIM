@@ -18,7 +18,17 @@ class LPKBadgeView: UIView {
     
     var badgeValue: String? {
         didSet {
-            if let badgeValue = badgeValue, let value = Int(badgeValue), value > 9 {
+            /// 如果 badgeValue == nil 隐藏
+            guard let badgeValue = badgeValue else {
+                return (isHidden = true)
+            }
+            
+            /// 如果 badgeValue == 为int类型，且 int <= 0 隐藏
+            if let intBadge = Int(badgeValue), intBadge <= 0 {
+                return (isHidden = true)
+            }
+            
+            if let value = Int(badgeValue), value > 9 {
                 badgeLeftPadding = 6.0
             } else {
                 badgeLeftPadding = 2.0
@@ -40,7 +50,7 @@ class LPKBadgeView: UIView {
         backgroundColor = UIColor.clear
     }
     
-    class func view(withBadgeTip badgeValue: String) -> LPKBadgeView {
+    class func view(withBadgeTip badgeValue: String?) -> LPKBadgeView {
         let instance = LPKBadgeView(frame: .zero)
         instance.frame = instance.frame(withBadge: badgeValue)
         instance.badgeValue = badgeValue
