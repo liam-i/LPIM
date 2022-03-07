@@ -40,18 +40,15 @@ class LPMainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllers()
-
-//        NIMSDK.shared().systemNotificationManager.add(self)
-//        NIMSDK.shared().conversationManager.add(self)
-//        
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(customNotificationCountChanged),
-//                                               name: kCustomNotificationCountChanged,
-//                                               object: nil)
+  
+        NIMSDK.shared().systemNotificationManager.add(self)
+        NIMSDK.shared().conversationManager.add(self)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(customNotificationCountChanged),
+                                               name: kCustomNotificationCountChanged,
+                                               object: nil)
     }
-    
-    
-    
     
     func setupViewControllers() {
         sessionUnreadCount = NIMSDK.shared().conversationManager.allUnreadCount()
@@ -61,7 +58,7 @@ class LPMainTabBarController: UITabBarController {
         let tabbars: [(vc: UIViewController, title: String, image_n: UIImage, image_s: UIImage, badgeValue: Int)] = [
             (LPSessionListViewController(), "LPIM", #imageLiteral(resourceName: "icon_message_normal"), #imageLiteral(resourceName: "icon_message_pressed"), sessionUnreadCount),
             (LPContactViewController(), "通讯录", #imageLiteral(resourceName: "icon_contact_normal"), #imageLiteral(resourceName: "icon_contact_pressed"), systemUnreadCount),
-            (LPContactViewController(), "直播间", #imageLiteral(resourceName: "icon_chatroom_normal"), #imageLiteral(resourceName: "icon_chatroom_pressed"), 0),
+            (LPBaseViewController(), "直播间", #imageLiteral(resourceName: "icon_chatroom_normal"), #imageLiteral(resourceName: "icon_chatroom_pressed"), 0),
             (LPSettingViewController(), "设置", #imageLiteral(resourceName: "icon_setting_normal"), #imageLiteral(resourceName: "icon_setting_pressed"), customSystemUnreadCount),
         ]
         
@@ -74,8 +71,8 @@ class LPMainTabBarController: UITabBarController {
             nav.tabBarItem.badgeValue = item.badgeValue > 0 ? "\(item.badgeValue)" : nil
             nav.tabBarItem.titlePositionAdjustment.vertical = -3.0
             
-            //        NTESNavigationHandler *handler = [[NTESNavigationHandler alloc] initWithNavigationController:nav];
-            //        nav.delegate = handler;
+//        NTESNavigationHandler *handler = [[NTESNavigationHandler alloc] initWithNavigationController:nav];
+//        nav.delegate = handler;
             
             vcArray.append(nav)
 //            [handleArray addObject:handler];

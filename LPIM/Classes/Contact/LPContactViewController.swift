@@ -25,12 +25,12 @@ class LPContactViewController: LPBaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         prepareData()
         
+        tableView.separatorInset.right = 0.0
         tableView.sectionIndexBackgroundColor = UIColor.clear
         tableView.tableFooterView = UIView()
-        
-        
         
         NIMSDK.shared().systemNotificationManager.add(self)
         NIMSDK.shared().loginManager.add(self)
